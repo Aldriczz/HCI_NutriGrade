@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NutriGrade Mark Calculator</title>
+    <link rel="stylesheet" href="Calculator.css">
+    <link rel="stylesheet" href="Template.css">
+</head>
+<body>
+    
+    <nav id="slide-menu">
+        <ul>
+            <li><a href="Home.html">Home</a></li>
+            <li><a href="">Calculator</a></li>
+            <li><a href="Search.html ">Search</a></li>
+            <li><a href="Chatbot.html">Help</a></li>
+        </ul>
+    </nav>
+    
+    <!-- Content -->
+    <div id="content">
+        <header id="logo">[ ] NUTRI-GRADE</header>
+        <div class="menu-trigger"></div>
+        <h1 class="title"></h1>
+        <div class="container">
+            <h1>Which Nutri-Grade mark should I use?</h1>
+            <div class="progress-bar">
+                <div class="step active">1</div>
+                <div class="step">2</div>
+                <div class="step">3</div>
+                <div class="step">4</div>
+            </div>
+
+            <div class="form-step form-step-active">
+                <div class="head">
+                    Input use of non-sugar substitutes
+                </div>
+                <p>Does the Nutri-Grade beverage contain any non-sugar substitutes?</p>
+                <p class="note">This refers to any aspartame, sugar alcohol, carbohydrate alcohol, polyhydric alcohol, or any other substance added in place of sugar to provide a sweet taste</p>
+                <label><input type="radio" id="nss" value="yes"> Yes</label>
+                <label><input type="radio" id="nss" value="no" > No</label>
+                <button id="next-button" onclick="nextStep()">NEXT</button>
+            </div>
+
+            <div class="form-step">
+                <div class="head">Input sugar level</div>
+                <p>Total sugar content stated on Nutrition Information Panel (NIP) (grams per 100 ml<sup>3</sup>)</p>
+                <p class="note">This refers to any monosaccharide and disaccharide in the beverage. This includes novel sugars like allulose and isomaltulose.</p>
+                <input type="number" id="sugar-level" placeholder="g/100ml" required>
+                <div class="button-container">
+                    <button id="back-button" onclick="prevStep()">BACK</button>
+                    <button id="next-button" onclick="nextStep()">NEXT</button>
+                </div>
+                
+            </div>
+
+            <div class="form-step">
+                <div class="head">Input saturated fat level</div>
+                <p>Total saturated fat content stated on Nutrition Information Panel (NIP) (grams per 100 ml<sup>3</sup>)</p>
+                <input type="number" id="fat-level" placeholder="g/100ml" required>
+                <button id="back-button" onclick="prevStep()">BACK</button>
+                <button id="next-button" onclick="nextStep()">NEXT</button>
+            </div>
+
+            <div class="form-step">
+                <div class="head">Results</div>
+                <div id="result-container">
+                    <p id="result-text"></p>
+                    <img id="result-image" src="" alt="Result Image">
+                </div>
+                <button id="back-button" onclick="prevStep()">BACK</button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="Template.js"></script>
+    <script src="Calculator.js"></script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Bot Interface</title>
+    <link rel="stylesheet" href="Chatbot.css">
+    <link rel="stylesheet" href="Template.css">
+    </head>
+<body>
+    <nav id="slide-menu">
+        <ul>
+            <li><a href="Home.html">Home</a></li>        
+            <li><a href="Calculator.html">Calculator</a></li>        
+            <li><a href="Search.html">Search</a></li>        
+            <li><a href="Chatbot.html">Help</a></li>   
+        </ul>
+        
+    </nav>
+
+     <!-- Content -->
+     <div id="content">
+        <div class="menu-trigger"></div>
+        <header id="logo">[ ] NUTRI-GRADE</header>
+        <div class="chat-container">
+            <div class="chat-header">
+                Chat Bot
+            </div>
+            <div class="chat-messages" id="chat-messages">
+                <!-- Messages will appear here -->
+            </div>
+            <div class="chat-input">
+                <input type="text" class="input-box" id="user-input" placeholder="Type your message...">
+                <button class="send-btn" onclick="sendMessage()">Send</button>
+            </div>
+            </div>
+    </div>
+
+    
+
+    <script src="Chatbot.js"></script>
+    <script src="Template.js"></script>
+
+</body>
+</html>
