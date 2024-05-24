@@ -127,7 +127,7 @@ label  {
 body.menu-active div#content {
     left: 284px;
     border-radius: 7px 0 0 7px;
-    background-image: url('market4.jpg');
+    background-image: url('Pictures/market4.jpg');
     background-size: cover;
   }
 
@@ -144,7 +144,7 @@ body.menu-active div#content {
     box-shadow: -3px 0 6px #4a5562;
     transition: all 300ms;
     
-    background-image: url('market5.jpg');
+    background-image: url('Pictures/market5.jpg');
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;            
