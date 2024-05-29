@@ -115,3 +115,54 @@ function filterProducts() {
         document.querySelector('#youC').style.display = 'none';
     }
 }
+
+//Buat kalau all checklist di grade, bisa diunchecklist semua checkbox
+document.addEventListener("DOMContentLoaded", () => {
+    const selectAllCheckbox = document.getElementById("selectAllGrade");
+    const gradeCheckboxes = document.querySelectorAll(".gradeCheckbox");
+
+    // Fungsi untuk mengatur status semua checkbox berdasarkan checkbox "Semua Grade"
+    function toggleAllCheckboxes() {
+        const isChecked = selectAllCheckbox.checked;
+        gradeCheckboxes.forEach(checkbox => {
+            checkbox.checked = isChecked;
+        });
+    }
+
+    // Panggil fungsi toggleAllCheckboxes saat checkbox "Semua Grade" berubah
+    selectAllCheckbox.addEventListener("change", toggleAllCheckboxes);
+});
+
+//Buat kalau all checklist di type, bisa diunchecklist semua checkbox
+document.addEventListener("DOMContentLoaded", () => {
+    const selectAllCheckbox = document.getElementById("selectAllType");
+    const typeCheckboxes = document.querySelectorAll(".typeCheckbox");
+
+    // Fungsi untuk mengatur status semua checkbox berdasarkan checkbox "Semua Grade"
+    function toggleAllCheckboxes() {
+        const isChecked = selectAllCheckbox.checked;
+        typeCheckboxes.forEach(checkbox => {
+            checkbox.checked = isChecked;
+        });
+    }
+
+    // Panggil fungsi toggleAllCheckboxes saat checkbox "Semua Grade" berubah
+    selectAllCheckbox.addEventListener("change", toggleAllCheckboxes);
+});
+
+//Buat kalau all checklist di producer, bisa diunchecklist semua checkbox
+document.addEventListener("DOMContentLoaded", () => {
+    const selectAllCheckbox = document.getElementById("selectAllProducer");
+    const producerCheckboxes = document.querySelectorAll(".producerCheckbox");
+
+    // Fungsi untuk mengatur status semua checkbox berdasarkan checkbox "Semua Grade"
+    function toggleAllCheckboxes() {
+        const isChecked = selectAllCheckbox.checked;
+        producerCheckboxes.forEach(checkbox => {
+            checkbox.checked = isChecked;
+        });
+    }
+
+    // Panggil fungsi toggleAllCheckboxes saat checkbox "Semua Grade" berubah
+    selectAllCheckbox.addEventListener("change", toggleAllCheckboxes);
+});

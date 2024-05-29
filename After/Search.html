@@ -34,29 +34,88 @@
                 Grade <span class="material-symbols-outlined">arrow_drop_down</span>
             </button>
             <div id="gradeDropdown" class="conten">
-                <a href="#">Grade A</a>
-                <a href="#">Grade B</a>
-                <a href="#">Grade C</a>
-                <a href="#">Grade D</a>
+                <div class="selectall">
+                    <label>
+                        <input type="checkbox" id="selectAllGrade" checked> Pilih Semua
+                    </label>
+                </div>
+                <div>
+                    <label>
+                        <input type="checkbox" class="gradeCheckbox" value="A"  checked> Grade A
+                    </label>
+                </div>
+                <div>
+                    <label>
+                        <input type="checkbox" class="gradeCheckbox" value="B" checked> Grade B
+                    </label>
+                </div>
+                <div>
+                    <label>
+                        <input type="checkbox" class="gradeCheckbox" value="C" checked> Grade C
+                    </label>
+                </div>
+                <div>
+                    <label>
+                        <input type="checkbox" class="gradeCheckbox" value="D" checked> Grade D
+                    </label>
+                </div>
             </div>
         
         <button class="button" onclick="toggleDropdown('typeDropdown')" data-dropdown="typeDropdown">
             Tipe <span class="material-symbols-outlined">arrow_drop_down</span>
         </button>
         <div id="typeDropdown" class="conten">
-            <a href="#">Makanan Kemasan</a>
-            <a href="#">Minuman Kemasan</a>
+            <div class="selectall">
+                <label>
+                    <input type="checkbox" id="selectAllType" checked> Pilih Semua
+                </label>
+            </div>
+            <div>
+                <label>
+                    <input type="checkbox" class="typeCheckbox" value="foods"  checked> Makanan Kemasan
+                </label>
+            </div>
+            <div>
+                <label>
+                    <input type="checkbox" class="typeCheckbox" value="drinks" checked> Minuman Kemasan
+                </label>
+            </div>
         </div>
         
         <button class="button" onclick="toggleDropdown('produsenDropdown')" data-dropdown="produsenDropdown">
             Produsen <span class="material-symbols-outlined">arrow_drop_down</span>
         </button>
         <div id="produsenDropdown" class="conten">
-            <a href="#">Orang Tua</a>
-            <a href="#">Indofood</a>
-            <a href="#">Nestle</a>
-            <a href="#">Wings</a>
-            <a href="#">Unilever</a>
+            <div class="selectall">
+                <label>
+                    <input type="checkbox" id="selectAllProducer" checked> Pilih Semua
+                </label>
+            </div>
+            <div>
+                <label>
+                    <input type="checkbox" class="producerCheckbox" value="orangTua"  checked> Orang Tua
+                </label>
+            </div>
+            <div>
+                <label>
+                    <input type="checkbox" class="producerCheckbox" value="Indofood" checked> Indofood
+                </label>
+            </div>
+            <div>
+                <label>
+                    <input type="checkbox" class="producerCheckbox" value="Nestle"  checked> Nestle
+                </label>
+            </div>
+            <div>
+                <label>
+                    <input type="checkbox" class="producerCheckbox" value="Wings" checked> Wings
+                </label>
+            </div>
+            <div>
+                <label>
+                    <input type="checkbox" class="producerCheckbox" value="Unilever"  checked> Unilever
+                </label>
+            </div>
         </div>    
     </div>
     

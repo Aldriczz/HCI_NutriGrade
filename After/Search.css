@@ -76,7 +76,7 @@ body {
     display: none;
     position: fixed;
     background-color: hsl(130, 88%, 47%);
-    width: 100%;
+    width: 15%;
     box-shadow: 2px 2px 5px hsla(0, 0%, 0%, 0.8);
     z-index: 1;
     border-radius: 10px;
@@ -144,3 +144,7 @@ div#content {
     background-position: center;
     background-size: cover; 
   }
+
+.selectAll{
+    background-color: darkgreen;
+}
