@@ -1,8 +1,6 @@
 var botResponse;
 
 async function getBotResponse(message) {
-
-    const apiKey = API_KEY; 
     const response = await fetch('https://api.openai.com/v1/chat/completions', {
         method: 'POST',
         headers: {
@@ -32,7 +30,7 @@ async function fetchOutput(userInput) {
 
         chatMessages.scrollTop = chatMessages.scrollHeight;
 }
-
+const apiKey = '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'; 
 function sendMessage() {
     var userInput = document.getElementById("user-input").value;
     if (userInput.trim() === "") return;
@@ -47,3 +45,4 @@ function sendMessage() {
 
     document.getElementById("user-input").value = "";
 }
+
