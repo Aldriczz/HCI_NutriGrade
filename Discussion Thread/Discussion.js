@@ -38,12 +38,9 @@ function post_thread(){
         storageId = storageId*10;
         storageId = storageId+Math.floor(Math.random()*(10-1)+1);
     }
-    // console.log(x);
+    
     storageId=storageId.toString(10);
 
-    // add.onclick = load(storageId);
-    // add.href = "thread.html";
-    // console.log(x);
     window.localStorage.setItem(storageId, '    <div class="top-bar">'+
     '        <h1 onclick="cleanAll()" class="forum-name">'+
     '            NutriGrade Forums'+
@@ -88,9 +85,6 @@ function post_thread(){
     list.appendChild(add);
     window.localStorage.setItem("thread-list", list.innerHTML);
     window.localStorage.setItem(storageId + '-cc', 0);
-
-    // var bodies = document.getElementById("bud");
-    // bodies.innerHTML = "<div id='stores' style='display: none'>" + storageId + "</div>";
 
     window.localStorage.setItem("fetch", storageId);
 
