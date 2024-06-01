@@ -6,7 +6,7 @@ async function getBotResponse(message) {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
-            'Authorization': `Bearer ${env.apiKey}` 
+            'Authorization': `Bearer ${apiKey}` 
         },
         body: JSON.stringify({
             model: 'gpt-3.5-turbo',
