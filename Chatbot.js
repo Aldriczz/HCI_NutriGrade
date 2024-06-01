@@ -1,28 +1,27 @@
 var botResponse;
 
-function fetchOutput(userInput) {
+async function getBotResponse(message) {
+    const apiKey = API_KEY; 
+    const response = await fetch('https://api.openai.com/v1/chat/completions', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${apiKey}`
+        },
+        body: JSON.stringify({
+            model: 'gpt-3.5-turbo', 
+            messages: [{ role: 'user', content: message }]
+        })
+    });
+    const data = await response.json();
+    return data.choices[0].message.content.trim();
+}
+
+async function fetchOutput(userInput) {
     
     var payload = { message: userInput };
-    
-    fetch( `http://localhost:8000/api/generate`, {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify(payload)
-    })
-    .then(response => {
-        
-        if (!response.ok) {
-            throw new Error("Network response was not ok");
-        }
-    
-        return response.json();
-    })
-    .then(data => {
-      
-        console.log("Generated text:", data.answer);
-        botResponse = data.answer;
+      botResponse = await getBotResponse(payload.message);
+        console.log("Generated text:", botResponse);
 
         var chatMessages = document.getElementById("chat-messages");
         var botMessage = document.createElement("div");
@@ -31,10 +30,6 @@ function fetchOutput(userInput) {
         chatMessages.appendChild(botMessage);
 
         chatMessages.scrollTop = chatMessages.scrollHeight;
-    })
-    .catch(error => {
-        console.error("Error fetching output:", error);
-    });
 }
 
 function sendMessage() {
@@ -47,7 +42,7 @@ function sendMessage() {
     userMessage.innerHTML = "<span class='text'>" + userInput + "</span>";
     chatMessages.appendChild(userMessage);
 
-    fetchOutput(userInput);
+    fetchOutput("You are a customer service of NutriGrade website, your task is to answer any customer question. "+userInput);
 
     document.getElementById("user-input").value = "";
 }
