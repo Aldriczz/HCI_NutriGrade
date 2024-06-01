@@ -5,7 +5,7 @@ async function getBotResponse(message) {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
-            'Authorization': `Bearer ${process.env.OPENAI_API_KEY}` // This will be replaced during the build
+            'Authorization': `Bearer ${env.OPENAI_API_KEY}` 
         },
         body: JSON.stringify({
             model: 'gpt-3.5-turbo',
