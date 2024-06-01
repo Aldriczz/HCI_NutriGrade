@@ -1,11 +1,12 @@
 var botResponse;
 
 async function getBotResponse(message) {
+    const Key = 'sk-proj-ZiypMhUgnu6j3C8uKwgwT3BlbkFJgS3P4PAJ0pe5qiQnzqbI'
     const response = await fetch('https://api.openai.com/v1/chat/completions', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
-            'Authorization': `Bearer ${process.env.OPENAI_API_KEY}` 
+            'Authorization': `Bearer ${apiKey}`
         },
         body: JSON.stringify({
             model: 'gpt-3.5-turbo',
@@ -31,7 +32,7 @@ async function fetchOutput(userInput) {
 
         chatMessages.scrollTop = chatMessages.scrollHeight;
 }
- 
+const apiKey = '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'; 
 function sendMessage() {
     var userInput = document.getElementById("user-input").value;
     if (userInput.trim() === "") return;
