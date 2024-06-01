@@ -18,14 +18,11 @@ jobs:
         with:
           node-version: '14'
 
-      - name: Install dependencies
-        run: npm install
+      - name: Create public directory
+        run: mkdir -p ./public
 
       - name: Inject API Key
         run: echo "window.API_KEY = '${{ secrets.OPENAI_API_KEY }}';" > ./public/config.js
-
-      - name: Build the project
-        run: npm run build  # Adjust this to your build command
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
