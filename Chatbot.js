@@ -1,12 +1,11 @@
 var botResponse;
 
 async function getBotResponse(message) {
-    const Key = 'sk-proj-ZiypMhUgnu6j3C8uKwgwT3BlbkFJgS3P4PAJ0pe5qiQnzqbI'
     const response = await fetch('https://api.openai.com/v1/chat/completions', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
-            'Authorization': `Bearer ${apiKey}`
+            'Authorization': `Bearer ${process.env.OPENAI_API_KEY}` // This will be replaced during the build
         },
         body: JSON.stringify({
             model: 'gpt-3.5-turbo',
@@ -16,6 +15,7 @@ async function getBotResponse(message) {
     const data = await response.json();
     return data.choices[0].message.content.trim();
 }
+
 
 
 async function fetchOutput(userInput) {
