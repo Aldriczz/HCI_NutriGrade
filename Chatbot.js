@@ -2,6 +2,7 @@ var botResponse;
 
 async function getBotResponse(message) {
     // const apiKey = window.API_KEY;
+    //test1
     const response = await fetch('https://api.openai.com/v1/chat/completions', {
         method: 'POST',
         headers: {
