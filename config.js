@@ -1,1 +1,1 @@
-window.API_KEY = 'sk-proj-dTvcsMTyVpYDNdiZ8dGYT3BlbkFJlfUfnU6dJ457o35Y1RBn';
+window.API_KEY = 'sk-proj-rz7vAWVsFfmgabGsh0osT3BlbkFJDsHK668pHmhQCygrbtRB';
