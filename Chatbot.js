@@ -1,13 +1,12 @@
 var botResponse;
 
 async function getBotResponse(message) {
-    const apiKey = window.API_KEY;
-    console.log(apiKey)
+    // const apiKey = window.API_KEY;
     const response = await fetch('https://api.openai.com/v1/chat/completions', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
-            'Authorization': `Bearer ${'sk-proj-rz7vAWVsFfmgabGsh0osT3BlbkFJDsHK668pHmhQCygrbtRB'}` 
+            'Authorization': `Bearer ${OPENAI_API_KEY}` 
         },
         body: JSON.stringify({
             model: 'gpt-3.5-turbo',
