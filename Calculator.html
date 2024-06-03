@@ -9,15 +9,17 @@
 </head>
 <body>
     
-    <nav id="slide-menu">
+   <nav id="slide-menu">
         <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="">Calculator</a></li>
+            <li><a href="Home.html">Home</a></li>
+            <li><a href="#">Calculator</a></li>
             <li><a href="Search.html ">Search</a></li>
+            <li><a href="Discussion.html">Discussion Forum</a></li>
             <li><a href="Chatbot.html">Help</a></li>
+            <li></li>
         </ul>
     </nav>
-    <!-- I Commit this shit -->
+    
     <div id="content">
         <header id="logo">[ ] NUTRI-GRADE</header>
         <div class="menu-trigger"></div>
@@ -37,8 +39,8 @@
                 </div>
                 <p>Does the Nutri-Grade beverage contain any non-sugar substitutes?</p>
                 <p class="note">This refers to any aspartame, sugar alcohol, carbohydrate alcohol, polyhydric alcohol, or any other substance added in place of sugar to provide a sweet taste</p>
-                <label><input type="radio" id="nss" value="yes"> Yes</label>
-                <label><input type="radio" id="nss" value="no" > No</label>
+                <label><input type="radio" id="nss" value="yes" name="radio"> Yes</label>
+                <label><input type="radio" id="nss" value="no" name="radio"> No</label>
                 <button id="next-button" onclick="nextStep()">NEXT</button>
             </div>
 
