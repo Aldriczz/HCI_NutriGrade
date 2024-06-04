@@ -54,12 +54,12 @@ p{
 .main{
     background-color: #f6f6ef;
     padding: 10px 15px;
-    overflow-y: scroll;
-    max-height: 210px;  
-    top: 360px;
+    overflow-y: scroll; 
+    max-height: 210px;
+    top: 360px; 
     position: fixed;
     left: 450px;
-    width: 525px;
+    width: 525px; 
     display: none;
 }
 
