@@ -4,70 +4,94 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nutri-Grade</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
     <link rel="stylesheet" href="CSS/Home.css">
 </head>
 <body>
-    <header id="logo">[ ] NUTRI-GRADE</header>
-    <header>
-        <nav class="navigation">
-            <a class="menu" href="#">Home</a>
-            <a class="menu" href="Calculator.html">Calculator</a>
-            <a class="menu" href="Search.html">Search</a>
-            <a class="menu" href="Discussion.html">Discussion Forum</a>
-            <a id="help" href="Chatbot.html">Help</a>
-        </nav>
-    </header>
-    <div id="headerBox"></div>
-    <h1>
-        YOUR GO-TO SUGAR TRACKER
-    </h1>
-
-    <h2>
-        Easily find out the sugar content of your
-        favorite products and get a health rating.
-    </h2>
-    <h3 class="titleFAQ">Frequently Asked Questions</h3>
-    <div class="faq">
-        <details>
-            <summary class="questions"><strong>Q:</strong> What is Nutri-Grade?</summary>
-            <p class="answers">
-                Nutri-Grade is a nutrition labeling system introduced 
-                by the Ministry of Health Singapore. It provides information about the sugar content 
-                in beverages, helping consumers make healthier choices. Nutri-Grade “grades” your drinks 
-                based on their sugar and saturated fat levels. Think of this as a combined score. 
-                Drinks graded “A” have the lowest sugar and saturated fat content, while drinks graded “D” have the highest.
-            </p>
-        </details>
+    <aside class="sidebar">
+        <div class="logo">
+            <h1><i>[ ]</i></h1>
+            <h2>NutriGrade</h2>
+        </div>
+        <ul class="links">
+            <li>
+                <span class="material-symbols-outlined">Home</span>
+                <a href="index.html">Home</a>
+            </li>
+            <li>
+                <span class="material-symbols-outlined">Calculate</span>
+                <a href="Calculator.html">Calculator</a>
+            </li>
+            <li>
+                <span class="material-symbols-outlined">Search</span>
+                <a href="Search.html">Search</a>
+            </li>
+            <li>
+                <span class="material-symbols-outlined">Forum</span>
+                <a href="Discussion.html">Forum</a>
+            </li>
+            <li>
+                <span class="material-symbols-outlined">Live_Help</span>
+                <a href="Chatbot.html">Live Help</a>
+            </li>
+        </ul>
+    </aside>
+    <div class="content">
+        <h1>
+            [ ] NUTRI-GRADE
+        </h1>
     
-        <details>
-            <summary class="questions"><strong>Q:</strong> What does the Nutri-Grade mark indicate?</summary>
-            <p class="answers">
-                The Nutri-Grade mark appears on packaged drinks. 
-                It displays the sugar percentage, allowing consumers to quickly assess the drink’s nutritional quality.
-            </p>
-        </details>
-        <details>
-            <summary class="questions"><strong>Q:</strong> Which beverages are covered by Nutri-Grade?</summary>
-            <p class="answers">Nutri-Grade initially applied to pre-packaged beverages 
-                and non-customizable automated beverage dispensers. As of December 30, 2023, 
-                it also includes freshly prepared drinks like kopi, teh, malted drinks, bubble tea, shakes, and smoothies</p>
-        </details>
-        <details>
-            <summary class="questions"><strong>Q:</strong> How to measure a Nutri-Grade of a food/drinks?</summary>
-            <p class="answers">The Nutri-Grade calculator is available to help industry and consumers easily determine 
-                the grade of Nutri-Grade beverages.</p>
-        </details>
-        <details>
-            <summary class="questions"><strong>Q:</strong>How does the Nutri-Grade calculator works?</summary>
-            <p class="answers">The calculator prompts user to input the fat and sugar contents of a 
-                drink or food with the measure of grams per 100ml<sup>3</sup>. 
-                The contents are stated on Nutrition Information Panel (NIP).
-                Then, the calculator will output either the Nutri-Grade A,B,C, or D. The calculator is in 
-                <a target="_blank" href="https://www.hpb.gov.sg/healthy-living/food-beverage/nutri-grade">
-                    conjunction with the Food Regulations and Industry Guidance Documents for important guidance and explanations</a>
-                
-            </p>
-        </details>
+        <h2>
+            YOUR GO-TO SUGAR TRACKER
+            <!-- Easily find out the sugar content of your
+            favorite products and get a health rating. -->
+        </h2>
+        <h3 class="titleFAQ">Frequently Asked Questions</h3>
+        <div class="faq">
+            <details>
+                <summary class="questions">What is Nutri-Grade?</summary>
+                <p class="answers">
+                    Nutri-Grade is a nutrition labeling system introduced 
+                    by the Ministry of Health Singapore. It provides information about the sugar content 
+                    in beverages, helping consumers make healthier choices. Nutri-Grade “grades” your drinks 
+                    based on their sugar and saturated fat levels. Think of this as a combined score. 
+                    Drinks graded “A” have the lowest sugar and saturated fat content, while drinks graded “D” have the highest.
+                </p>
+            </details>
+        
+            <details>
+                <summary class="questions">What does the Nutri-Grade mark indicate?</summary>
+                <p class="answers">
+                    The Nutri-Grade mark appears on packaged drinks. 
+                    It displays the sugar percentage, allowing consumers to quickly assess the drink’s nutritional quality.
+                </p>
+            </details>
+            <details>
+                <summary class="questions">Which beverages are covered by Nutri-Grade?</summary>
+                <p class="answers">Nutri-Grade initially applied to pre-packaged beverages 
+                    and non-customizable automated beverage dispensers. As of December 30, 2023, 
+                    it also includes freshly prepared drinks like kopi, teh, malted drinks, bubble tea, shakes, and smoothies</p>
+            </details>
+            <details>
+                <summary class="questions">How to measure a Nutri-Grade of a food/drinks?</summary>
+                <p class="answers">The Nutri-Grade calculator is available to help industry and consumers easily determine 
+                    the grade of Nutri-Grade beverages.</p>
+            </details>
+            <details>
+                <summary class="questions">How does the Nutri-Grade calculator works?</summary>
+                <p class="answers">The calculator prompts user to input the fat and sugar contents of a 
+                    drink or food with the measure of grams per 100ml<sup>3</sup>. 
+                    The contents are stated on Nutrition Information Panel (NIP).
+                    Then, the calculator will output either the Nutri-Grade A,B,C, or D. The calculator is in 
+                    <a target="_blank" href="https://www.hpb.gov.sg/healthy-living/food-beverage/nutri-grade">
+                        conjunction with the Food Regulations and Industry Guidance Documents for important guidance and explanations</a>
+                    
+                </p>
+            </details>
+        </div>
+    
+
+
         <!-- Tinggal copy kalau mau tambah faq -->
         <!-- <details>
             <summary class="questions"><strong>Q:</strong></summary>
