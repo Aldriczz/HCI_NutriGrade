@@ -191,6 +191,7 @@ p{
     top: 130px;
     width: 550px;
     left: 450px;
+    display: none;
 }
 
 .tt {
