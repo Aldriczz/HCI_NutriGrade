@@ -36,19 +36,18 @@
         </li>
     </ul>
 </nav>
-<body>
+<body onload="renderPost()">
     
 
 <div id="content">
     <div class="container">
-     <div onload="renderPost()">
         <div class="top-bar">
             <h1 class="forum-name" onclick="clearAll()">NutriGrade Forums</h1>
             <div class="buttons">
                 <button class="new-thread" onclick="new_thread()">Create new thread</button>
             </div>
         </div>
-        <div class="new-thread-setup" style="display: none;" id="create-thread">
+        <div class="new-thread-setup" id="create-thread">
             <h1 class="thread-create">Create a new thread</h1>
             <h3 class="info">Title: </h3>
             <input type="text" class="tt" placeholder="(300 max words)" required maxlength="300" id="tt">
