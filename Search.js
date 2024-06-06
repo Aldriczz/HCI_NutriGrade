@@ -86,104 +86,76 @@ document.querySelectorAll('.content').forEach(dropdown => {
     });
 });
 
-function filterProducts() {
-    const selectedGrade = document.querySelector('[data-dropdown="gradeDropdown"]').textContent.trim();
-    const selectedType = document.querySelector('[data-dropdown="typeDropdown"]').textContent.trim();
-    const selectedProdusen = document.querySelector('[data-dropdown="produsenDropdown"]').textContent.trim();
+//Filter
 
-    if (selectedGrade === 'Grade A' && selectedType === 'Minuman Kemasan' && selectedProdusen === 'Nestle') {
-        document.querySelector('#nescafeGoldOriginal').style.display = 'inline-block';
-    } else {
-        document.querySelector('#nescafeGoldOriginal').style.display = 'none';
-    }
-
-    if (selectedGrade === 'Grade B' && selectedType === 'Minuman Kemasan' && selectedProdusen === 'Orang Tua') {
-        document.querySelector('#coconutWater').style.display = 'inline-block';
-    } else {
-        document.querySelector('#coconutWater').style.display = 'none';
-    }
-
-    if (selectedGrade === 'Grade C' && selectedType === 'Minuman Kemasan' && selectedProdusen === 'Unilever') {
-        document.querySelector('#indocafeC').style.display = 'inline-block';
-    } else {
-        document.querySelector('#indocafeC').style.display = 'none';
-    }
-
-    if (selectedGrade === 'Grade D' && selectedType === 'Minuman Kemasan' && selectedProdusen === 'Wings') {
-        document.querySelector('#youC').style.display = 'inline-block';
-    } else {
-        document.querySelector('#youC').style.display = 'none';
-    }
-}
-
-//Buat kalau all checklist di grade, bisa diunchecklist semua checkbox
 document.addEventListener("DOMContentLoaded", () => {
-    const selectAllCheckbox = document.getElementById("selectAllGrade");
-    const gradeCheckboxes = document.querySelectorAll(".gradeCheckbox");
+    const checkGroups = [
+        { selectAllId: "selectAllGrade", checkboxClass: "gradeCheckbox", name: "gradeCheckbox" },
+        { selectAllId: "selectAllType", checkboxClass: "typeCheckbox", name: "typeCheckbox" },
+        { selectAllId: "selectAllProducer", checkboxClass: "producerCheckbox", name: "producerCheckbox" },
+    ];
 
-    // Function to update "Select All" checkbox based on individual grade checkboxes
-    function updateSelectAllCheckbox() {
-        const allChecked = Array.from(gradeCheckboxes).every(checkbox => checkbox.checked);
+    function updateSelectAllCheckbox(group) {
+        const checkboxes = document.querySelectorAll(`.${group.checkboxClass}`);
+        const selectAllCheckbox = document.getElementById(group.selectAllId);
+        const allChecked = Array.from(checkboxes).every(checkbox => checkbox.checked);
         selectAllCheckbox.checked = allChecked;
     }
 
-    // Toggle individual grade checkboxes
-    gradeCheckboxes.forEach(checkbox => {
-        checkbox.addEventListener("change", updateSelectAllCheckbox);
-    });
+    function setVisibility() {
+        const checkedGrades = getChecked('gradeCheckbox');
+        const checkedTypes = getChecked('typeCheckbox');
+        const checkedProducers = getChecked('producerCheckbox');
 
-    // Toggle "Select All" checkbox
-    selectAllCheckbox.addEventListener("change", () => {
-        gradeCheckboxes.forEach(checkbox => {
-            checkbox.checked = selectAllCheckbox.checked;
+        allFoods.forEach(el => {
+            const gradeCheck = checkedGrades.length === 0 || checkedGrades.some(value => el.classList.contains(value));
+            const typeCheck = checkedTypes.length === 0 || checkedTypes.some(value => el.classList.contains(value));
+            const producerCheck = checkedProducers.length === 0 || checkedProducers.some(value => el.classList.contains(value));
+
+            // Hide all food elements if no filters are selected
+            if (checkedGrades.length === 0 && checkedTypes.length === 0 && checkedProducers.length === 0) {
+                el.style.display = 'none';
+            } else {
+                // Show the food element if it matches the selected filters
+                el.style.display = (gradeCheck && typeCheck && producerCheck) ? 'inline-block' : 'none';
+            }
         });
-    });
-});
-
-//Buat kalau all checklist di type, bisa diunchecklist semua checkbox
-document.addEventListener("DOMContentLoaded", () => {
-    const selectAllCheckbox = document.getElementById("selectAllType");
-    const typeCheckboxes = document.querySelectorAll(".typeCheckbox");
-
-    // Function to update "Select All" checkbox based on individual grade checkboxes
-    function updateSelectAllCheckbox() {
-        const allChecked = Array.from(typeCheckboxes).every(checkbox => checkbox.checked);
-        selectAllCheckbox.checked = allChecked;
     }
 
-    // Toggle individual grade checkboxes
-    typeCheckboxes.forEach(checkbox => {
-        checkbox.addEventListener("change", updateSelectAllCheckbox);
-    });
-
-    // Toggle "Select All" checkbox
-    selectAllCheckbox.addEventListener("change", () => {
-        typeCheckboxes.forEach(checkbox => {
-            checkbox.checked = selectAllCheckbox.checked;
-        });
-    });
-});
-
-//Buat kalau all checklist di producer, bisa diunchecklist semua checkbox
-document.addEventListener("DOMContentLoaded", () => {
-    const selectAllCheckbox = document.getElementById("selectAllProducer");
-    const producerCheckboxes = document.querySelectorAll(".producerCheckbox");
-
-    // Function to update "Select All" checkbox based on individual grade checkboxes
-    function updateSelectAllCheckbox() {
-        const allChecked = Array.from(producerCheckboxes).every(checkbox => checkbox.checked);
-        selectAllCheckbox.checked = allChecked;
+    function getChecked(name) {
+        return Array.from(document.querySelectorAll(`input[name=${name}]:checked`)).map(el => el.value);
     }
 
-    // Toggle individual grade checkboxes
-    producerCheckboxes.forEach(checkbox => {
-        checkbox.addEventListener("change", updateSelectAllCheckbox);
+    checkGroups.forEach(group => {
+        const selectAllCheckbox = document.getElementById(group.selectAllId);
+        const checkboxes = document.querySelectorAll(`.${group.checkboxClass}`);
+
+        checkboxes.forEach(checkbox => {
+            checkbox.addEventListener("change", () => {
+                updateSelectAllCheckbox(group);
+                setVisibility();
+            });
+        });
+
+        selectAllCheckbox.addEventListener("change", () => {
+            checkboxes.forEach(checkbox => {
+                checkbox.checked = selectAllCheckbox.checked;
+            });
+            setVisibility();
+        });
+
+        updateSelectAllCheckbox(group);
     });
 
-    // Toggle "Select All" checkbox
-    selectAllCheckbox.addEventListener("change", () => {
-        producerCheckboxes.forEach(checkbox => {
-            checkbox.checked = selectAllCheckbox.checked;
-        });
+    const allFoods = Array.from(document.querySelectorAll('.food'));
+
+    // Initialize visibility on page load
+    setVisibility();
+
+    // Add event listener to all checkboxes
+    const allCheckboxes = document.querySelectorAll('input[type=checkbox]');
+    allCheckboxes.forEach(checkbox => {
+        checkbox.addEventListener('change', setVisibility);
     });
 });
+

@@ -58,107 +58,107 @@
                 </div>
                 <div>
                     <label>
-                        <input type="checkbox" class="gradeCheckbox" value="A"  checked> Grade A
+                        <input type="checkbox" class="gradeCheckbox" name="gradeCheckbox" value="A" id="A" checked> Grade A
                     </label>
                 </div>
                 <div>
                     <label>
-                        <input type="checkbox" class="gradeCheckbox" value="B" checked> Grade B
+                        <input type="checkbox" class="gradeCheckbox" name="gradeCheckbox" value="B" id="B" checked> Grade B
                     </label>
                 </div>
                 <div>
                     <label>
-                        <input type="checkbox" class="gradeCheckbox" value="C" checked> Grade C
+                        <input type="checkbox" class="gradeCheckbox" name="gradeCheckbox" value="C" id="C" checked> Grade C
                     </label>
                 </div>
                 <div>
                     <label>
-                        <input type="checkbox" class="gradeCheckbox" value="D" checked> Grade D
+                        <input type="checkbox" class="gradeCheckbox" name="gradeCheckbox" value="D" id="D" checked> Grade D
                     </label>
                 </div>
             </div>
         
-        <button class="button" onclick="toggleDropdown('typeDropdown')" data-dropdown="typeDropdown">
-            Tipe <span class="material-symbols-outlined">arrow_drop_down</span>
-        </button>
-        <div id="typeDropdown" class="conten">
-            <div class="selectAll">
-                <label>
-                    <input type="checkbox" id="selectAllType" checked> Pilih Semua
-                </label>
+            <button class="button" onclick="toggleDropdown('typeDropdown')" data-dropdown="typeDropdown">
+                Tipe <span class="material-symbols-outlined">arrow_drop_down</span>
+            </button>
+            <div id="typeDropdown" class="conten">
+                <div class="selectAll">
+                    <label>
+                        <input type="checkbox" id="selectAllType" checked> Pilih Semua
+                    </label>
+                </div>
+                <div>
+                    <label>
+                        <input type="checkbox" class="typeCheckbox" name="typeCheckbox" value="foods" id="foods" checked> Makanan Kemasan
+                    </label>
+                </div>
+                <div>
+                    <label>
+                        <input type="checkbox" class="typeCheckbox" name="typeCheckbox" value="drinks" id="drinks" checked> Minuman Kemasan
+                    </label>
+                </div>
             </div>
-            <div>
-                <label>
-                    <input type="checkbox" class="typeCheckbox" value="foods"  checked> Makanan Kemasan
-                </label>
+        
+            <button class="button" onclick="toggleDropdown('produsenDropdown')" data-dropdown="produsenDropdown">
+                Produsen <span class="material-symbols-outlined">arrow_drop_down</span>
+            </button>
+            <div id="produsenDropdown" class="conten">
+                <div class="selectAll">
+                    <label>
+                        <input type="checkbox" id="selectAllProducer" checked> Pilih Semua
+                    </label>
+                </div>
+                <div>
+                    <label>
+                        <input type="checkbox" class="producerCheckbox" name="producerCheckbox" value="ortu" id="ortu" checked> Orang Tua
+                    </label>
+                </div>
+                <div>
+                    <label>
+                        <input type="checkbox" class="producerCheckbox" name="producerCheckbox" value="ifo" id="ifo" checked> Indofood
+                    </label>
+                </div>
+                <div>
+                    <label>
+                        <input type="checkbox" class="producerCheckbox" name="producerCheckbox" value="nest" id="nest" checked> Nestle
+                    </label>
+                </div>
+                <div>
+                    <label>
+                        <input type="checkbox" class="producerCheckbox" name="producerCheckbox" value="wings" id="wings" checked> Wings
+                    </label>
+                </div>
+                <div>
+                    <label>
+                        <input type="checkbox" class="producerCheckbox" name="producerCheckbox" value="ule" id="ule" checked> Unilever
+                    </label>
+                </div>
+            </div>    
+        </div>
+    
+        <div class="food-boxes">
+            <div class="food A foods ule">
+                <img src="CSS/Pictures/nescafe.png" height="300">
+                <div class="food-name">Nescafe Gold Original</div>
             </div>
-            <div>
-                <label>
-                    <input type="checkbox" class="typeCheckbox" value="drinks" checked> Minuman Kemasan
-                </label>
+
+            <div class="food B drinks ifo">
+                <img src="CSS/Pictures/ufc.webp" height="300">
+                <div class="food-name">UFC Coconut Water</div>
+            </div>
+
+            <div class="food C foods ifo">
+                <img src="CSS/Pictures/indocafe.webp" height="300">
+                <div class="food-name">Indocafe Coffeemix</div>
+            </div>
+
+            <div class="food D drinks nest">
+                <img src="CSS/Pictures/c1000.webp" height="300">    
+                <div class="food-name">YOU-C1000 Bottle</div>
             </div>
         </div>
-        
-        <button class="button" onclick="toggleDropdown('produsenDropdown')" data-dropdown="produsenDropdown">
-            Produsen <span class="material-symbols-outlined">arrow_drop_down</span>
-        </button>
-        <div id="produsenDropdown" class="conten">
-            <div class="selectAll">
-                <label>
-                    <input type="checkbox" id="selectAllProducer" checked> Pilih Semua
-                </label>
-            </div>
-            <div>
-                <label>
-                    <input type="checkbox" class="producerCheckbox" value="orangTua"  checked> Orang Tua
-                </label>
-            </div>
-            <div>
-                <label>
-                    <input type="checkbox" class="producerCheckbox" value="Indofood" checked> Indofood
-                </label>
-            </div>
-            <div>
-                <label>
-                    <input type="checkbox" class="producerCheckbox" value="Nestle"  checked> Nestle
-                </label>
-            </div>
-            <div>
-                <label>
-                    <input type="checkbox" class="producerCheckbox" value="Wings" checked> Wings
-                </label>
-            </div>
-            <div>
-                <label>
-                    <input type="checkbox" class="producerCheckbox" value="Unilever"  checked> Unilever
-                </label>
-            </div>
-        </div>    
     </div>
     
-        <div class="food">
-        <div id="nescafeGoldOriginal" style="display: inline-block; position: relative;">
-            <img src="CSS/Pictures/nescafe.png" height="300">
-            <div style="position: relative; bottom: 0; left: 70%; transform: translateX(-50%);color: white;">Nescafe Gold Original</div>
-        </div>
-
-        <div id="coconutWater" style="display: inline-block; position: relative;">
-            <img src="CSS/Pictures/ufc.webp" height="300">
-            <div style="position: relative; bottom: 0; left:70%; transform: translateX(-50%);color: white;">UFC Coconut Water</div>
-        </div>
-
-        <div id="indocafeC" style="display: inline-block; position: relative;">
-            <img src="CSS/Pictures/indocafe.webp" height="300">
-            <div style="position: relative; bottom: 0; left: 70%; transform: translateX(-50%); color: white;">Indocafe Coffeemix</div>
-        </div>
-
-        <div id="youC" style="display: inline-block; position: relative;">
-            <img src="CSS/Pictures/c1000.webp" height="300">    
-            <div style="position: relative; bottom: 0; left: 70%; transform: translateX(-50%); color: white;">YOU-C1000 Bottle</div>
-            </div>
-        </div>
-        </div>
-    </div>
 
     <script src="Search.js"></script>
     
