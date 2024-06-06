@@ -121,16 +121,23 @@ document.addEventListener("DOMContentLoaded", () => {
     const selectAllCheckbox = document.getElementById("selectAllGrade");
     const gradeCheckboxes = document.querySelectorAll(".gradeCheckbox");
 
-    // Fungsi untuk mengatur status semua checkbox berdasarkan checkbox "Semua Grade"
-    function toggleAllCheckboxes() {
-        const isChecked = selectAllCheckbox.checked;
-        gradeCheckboxes.forEach(checkbox => {
-            checkbox.checked = isChecked;
-        });
+    // Function to update "Select All" checkbox based on individual grade checkboxes
+    function updateSelectAllCheckbox() {
+        const allChecked = Array.from(gradeCheckboxes).every(checkbox => checkbox.checked);
+        selectAllCheckbox.checked = allChecked;
     }
 
-    // Panggil fungsi toggleAllCheckboxes saat checkbox "Semua Grade" berubah
-    selectAllCheckbox.addEventListener("change", toggleAllCheckboxes);
+    // Toggle individual grade checkboxes
+    gradeCheckboxes.forEach(checkbox => {
+        checkbox.addEventListener("change", updateSelectAllCheckbox);
+    });
+
+    // Toggle "Select All" checkbox
+    selectAllCheckbox.addEventListener("change", () => {
+        gradeCheckboxes.forEach(checkbox => {
+            checkbox.checked = selectAllCheckbox.checked;
+        });
+    });
 });
 
 //Buat kalau all checklist di type, bisa diunchecklist semua checkbox
@@ -138,16 +145,23 @@ document.addEventListener("DOMContentLoaded", () => {
     const selectAllCheckbox = document.getElementById("selectAllType");
     const typeCheckboxes = document.querySelectorAll(".typeCheckbox");
 
-    // Fungsi untuk mengatur status semua checkbox berdasarkan checkbox "Semua Grade"
-    function toggleAllCheckboxes() {
-        const isChecked = selectAllCheckbox.checked;
-        typeCheckboxes.forEach(checkbox => {
-            checkbox.checked = isChecked;
-        });
+    // Function to update "Select All" checkbox based on individual grade checkboxes
+    function updateSelectAllCheckbox() {
+        const allChecked = Array.from(typeCheckboxes).every(checkbox => checkbox.checked);
+        selectAllCheckbox.checked = allChecked;
     }
 
-    // Panggil fungsi toggleAllCheckboxes saat checkbox "Semua Grade" berubah
-    selectAllCheckbox.addEventListener("change", toggleAllCheckboxes);
+    // Toggle individual grade checkboxes
+    typeCheckboxes.forEach(checkbox => {
+        checkbox.addEventListener("change", updateSelectAllCheckbox);
+    });
+
+    // Toggle "Select All" checkbox
+    selectAllCheckbox.addEventListener("change", () => {
+        typeCheckboxes.forEach(checkbox => {
+            checkbox.checked = selectAllCheckbox.checked;
+        });
+    });
 });
 
 //Buat kalau all checklist di producer, bisa diunchecklist semua checkbox
@@ -155,14 +169,21 @@ document.addEventListener("DOMContentLoaded", () => {
     const selectAllCheckbox = document.getElementById("selectAllProducer");
     const producerCheckboxes = document.querySelectorAll(".producerCheckbox");
 
-    // Fungsi untuk mengatur status semua checkbox berdasarkan checkbox "Semua Grade"
-    function toggleAllCheckboxes() {
-        const isChecked = selectAllCheckbox.checked;
-        producerCheckboxes.forEach(checkbox => {
-            checkbox.checked = isChecked;
-        });
+    // Function to update "Select All" checkbox based on individual grade checkboxes
+    function updateSelectAllCheckbox() {
+        const allChecked = Array.from(producerCheckboxes).every(checkbox => checkbox.checked);
+        selectAllCheckbox.checked = allChecked;
     }
 
-    // Panggil fungsi toggleAllCheckboxes saat checkbox "Semua Grade" berubah
-    selectAllCheckbox.addEventListener("change", toggleAllCheckboxes);
+    // Toggle individual grade checkboxes
+    producerCheckboxes.forEach(checkbox => {
+        checkbox.addEventListener("change", updateSelectAllCheckbox);
+    });
+
+    // Toggle "Select All" checkbox
+    selectAllCheckbox.addEventListener("change", () => {
+        producerCheckboxes.forEach(checkbox => {
+            checkbox.checked = selectAllCheckbox.checked;
+        });
+    });
 });
