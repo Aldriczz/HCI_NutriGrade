@@ -222,8 +222,21 @@ body {
         'GRAD' 0,
         'opsz' 48;
 }
-
 .food{
+    display: inline-block; 
+    position: relative;
+}
+
+.food-name{
+    position: relative; 
+    bottom: 0; 
+    left: 70%; 
+    transform: 
+    translateX(-50%);
+    color: white;
+}
+
+.food-boxes{
     width: 100%;
     display: inline-block; 
     position: relative;
