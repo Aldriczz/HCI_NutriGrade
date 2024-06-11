@@ -4,6 +4,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
 }
 
 body{
@@ -127,12 +128,23 @@ body{
     border-radius: 10px;
     width: 600px;
     transition: margin-left 0.3s ease, width 0.3s ease;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
 .sidebar:hover ~ .container {
     margin-left: 300px;
     width: 600px;
+}
+
+.head{
+    text-align: left;
+    padding: 12px;  
+    justify-content: space-between;
+    margin-bottom: 20px;
+    background-color: black;
+    color: orange;
+    font-weight: 600;
+    font-size: 16px;
+    border-radius: 4px;
 }
 
 .container h1 {
@@ -155,7 +167,7 @@ body{
     justify-content: center;
     align-items: center;
     color: rgb(145, 145, 145);
-    font-weight: bold;
+    font-weight: 500;
 }
 
 .step.active {
@@ -173,46 +185,46 @@ body{
 
 .button-container {
     flex-direction: row;
+    align-items: end;
+    display: flex;
+    height: 50px;
+    margin-top: 12px;
 }
 
-#next-button {
+#other{
+    display: flex;
+    justify-content: space-between;
+}
+
+#first{
+    justify-content: right;
+}
+
+#next-button, #back-button {
     padding: 10px 15px;
-    margin-top: 30px;
     background-color: orange;
     color: black;
     font-weight: 800;
-    letter-spacing: 5px;
-    border: 3px solid black;
+    letter-spacing: 1px;
+    border: none;
     border-radius: 5px;
     cursor: pointer;
     display: flex;
+    justify-content: right;
+    align-items: right;
+    justify-self: right;
 }
 
-#back-button{
-    padding: 10px 15px;
-    margin-top: 30px;
-    background-color: orange;
-    color: black;
-    font-weight: 800;
-    letter-spacing: 5px;
-    border: 3px solid black;
-    border-radius: 5px;
-    cursor: pointer;
-    display: flex;
-}
-
-#sugar-level{
+.num-box {
     padding: 10px;
-    margin-top: 10px;
-    
+    margin-top: 10px; 
+    border: 2px solid rgb(161, 161, 161);
+    border-radius: 5px;
+    font-weight: 500;
 }
 
-#back-button:hover {
-    background-color: rgb(234, 152, 0);
-}
-
-#next-button:hover {
-    background-color: rgb(234, 152, 0);
+#back-button:hover, #next-button:hover {
+    background-color: rgb(255, 179, 39);
 }
 
 .container label {
@@ -220,11 +232,14 @@ body{
     margin: 10px 0;
 }
 
+.instruction{
+    margin-bottom: 15px;
+}
+
 .note {
     font-size: 12px;
-    color: #666;
+    color: rgb(145, 145, 145);
     text-align: left;
-    margin-top: 15px;
     margin-bottom: 10px;
     margin-left: 2px;
 }
@@ -242,20 +257,18 @@ body{
     margin-left: -6px;
 }
 
-.head{
-    text-align: left;
-    padding: 12px;  
-    justify-content: space-between;
-    margin-bottom: 20px;
-    background-color: black;
-    color: orange;
-    font-weight: 800;
-    font-size: 16px;
-    border-radius: 5px;
-}
-
 #result-image{
     margin-bottom: 20px;
+}
+
+#result-text{
+    font-size: 150px;
+    justify-content: center;
+    display: flex;
+    font-weight: 700;
+    /* background-color: chartreuse; */
+    -webkit-text-stroke: 5px black;
+    color: orange;
 }
 
  

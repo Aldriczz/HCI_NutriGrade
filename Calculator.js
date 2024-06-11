@@ -82,25 +82,41 @@ function calculate() {
         score--;
     }
 
+    // switch (score) {
+    //     case 1:
+    //         resultText = "D";
+    //         resultImage = "D.png";
+    //         break;
+    //     case 2:
+    //         resultText = "C";
+    //         resultImage = "C.png";
+    //         break;
+    //     case 3:
+    //         resultText = "B";
+    //         resultImage = "B.png";
+    //         break;
+    //     case 4:
+    //         resultText = "A";
+    //         resultImage = "A.png";
+    //         break;
+    // }
+    
     switch (score) {
         case 1:
             resultText = "D";
-            resultImage = "D.png";
             break;
         case 2:
             resultText = "C";
-            resultImage = "C.png";
             break;
         case 3:
             resultText = "B";
-            resultImage = "B.png";
             break;
         case 4:
             resultText = "A";
-            resultImage = "A.png";
             break;
     }
 
-    document.getElementById("result-text").textContent = "Result: " + resultText;
-    document.getElementById("result-image").src = resultImage;
+    // document.getElementById("result-text").textContent = "Result: " + resultText;
+    document.getElementById("result-text").textContent = resultText;
+    // document.getElementById("result-image").src = resultImage;
 }

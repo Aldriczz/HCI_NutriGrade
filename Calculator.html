@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NutriGrade Mark Calculator</title>
+    <title>Calculator - NutriGrade</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
     <link rel="stylesheet" href="CSS/Calculator.css">
 </head>
@@ -49,21 +49,23 @@
             <div class="head">
                 Input use of non-sugar substitutes
             </div>
-            <p>Does the Nutri-Grade beverage contain any non-sugar substitutes?</p>
+            <p class="instruction">Does the Nutri-Grade beverage contain any non-sugar substitutes?</p>
             <p class="note">This refers to any aspartame, sugar alcohol, carbohydrate alcohol, polyhydric alcohol, or any other substance added in place of sugar to provide a sweet taste</p>
             <label><input type="radio" id="nss" value="yes" name="radio"> Yes</label>
             <label><input type="radio" id="nss" value="no" name="radio"> No</label>
-            <div class="button-container">
+            <div class="button-container" id="first">
+                <!-- <button id="back-button" onclick="prevStep()">BACK</button> -->
                 <button id="next-button" onclick="nextStep()">NEXT</button>
             </div>
         </div>
 
         <div class="form-step">
             <div class="head">Input sugar level</div>
-            <p>Total sugar content stated on Nutrition Information Panel (NIP) (grams per 100 ml<sup>3</sup>)</p>
+            <p class="instruction">Total sugar content stated on Nutrition Information Panel (NIP) (grams per 100 ml<sup>3</sup>)</p>
             <p class="note">This refers to any monosaccharide and disaccharide in the beverage. This includes novel sugars like allulose and isomaltulose.</p>
-            <input type="number" id="sugar-level" placeholder="g/100ml" required>
-            <div class="button-container">
+            <!-- <input type="number" class="num-box" id="sugar-level" placeholder="g/100ml" required> -->
+            <input type="input" class="num-box" id="sugar-level" placeholder="g/100ml" required>
+            <div class="button-container" id="other">
                 <button id="back-button" onclick="prevStep()">BACK</button>
                 <button id="next-button" onclick="nextStep()">NEXT</button>
             </div>
@@ -72,9 +74,10 @@
 
         <div class="form-step">
             <div class="head">Input saturated fat level</div>
-            <p>Total saturated fat content stated on Nutrition Information Panel (NIP) (grams per 100 ml<sup>3</sup>)</p>
-            <input type="number" id="fat-level" placeholder="g/100ml" required>
-            <div class="button-container">
+            <p class="instruction">Total saturated fat content stated on Nutrition Information Panel (NIP) (grams per 100 ml<sup>3</sup>)</p>
+            <!-- <input type="number" class="num-box" id="fat-level" placeholder="g/100ml" required> -->
+            <input type="input" class="num-box" id="fat-level" placeholder="g/100ml" required>
+            <div class="button-container" id="other">
                 <button id="back-button" onclick="prevStep()">BACK</button>
                 <button id="next-button" onclick="nextStep()">NEXT</button>
             </div>
@@ -84,9 +87,9 @@
             <div class="head">Results</div>
             <div id="result-container">
                 <p id="result-text"></p>
-                <img id="result-image" src="" alt="Result Image">
+                <!-- <img id="result-image" src="" alt="Result Image"> -->
             </div>
-            <div class="button-container">
+            <div class="button-container" id="other">
                 <button id="back-button" onclick="prevStep()">BACK</button>
             </div>
         </div>

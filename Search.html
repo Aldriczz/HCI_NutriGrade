@@ -3,36 +3,140 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Search</title>
+    <title>Search - NutriGrade</title>
     <link rel="stylesheet" href="CSS/Search.css">
-    <link rel="stylesheet" href="CSS/Template.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+
 </head>
 <body>
-    <nav id="slide-menu">
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="Calculator.html">Calculator</a></li>
-            <li><a href="#">Search</a></li>
-            <li><a href="Discussion.html">Discussion Forum</a></li>
-            <li><a href="Chatbot.html">Help</a></li>
-            <li></li>
+    <aside class="sidebar">
+        <div class="logo">
+            <h1><i>[ ]</i></h1>
+            <h2>NutriGrade</h2>
+        </div>
+        <ul class="links">
+            <li>
+                <span class="material-symbols-outlined">Home</span>
+                <a href="#">Home</a>
+            </li>
+            <li>
+                <span class="material-symbols-outlined">Calculate</span>
+                <a href="Calculator.html">Calculator</a>
+            </li>
+            <li>
+                <span class="material-symbols-outlined">Search</span>
+                <a href="Search.html">Search</a>
+            </li>
+            <li>
+                <span class="material-symbols-outlined">Forum</span>
+                <a href="Discussion.html">Forum</a>
+            </li>
+            <li>
+                <span class="material-symbols-outlined">Live_Help</span>
+                <a href="Chatbot.html">Live Help</a>
+            </li>
         </ul>
-    </nav>
-    <div id="content" >
-            <header id="logo">[ ] NUTRI-GRADE</header>
-            <div class="menu-trigger"></div>
+    </aside>
+    <div class="content">
+        <!-- <h1 class="title">Search</h1> -->
         <div id="searchForm">
             <div class="search">
                 <span class="search-icon material-symbols-outlined">search</span>
-                <input id="searchInput" class="search-input" type="search" placeholder="Masukkan Nama Produk untuk Dicari">
+                <input id="searchInput" class="search-input" type="search" placeholder="Search for a certain product">
             </div>
         </div>
-
-
         <div class="main">
-            <button class="button" onclick="toggleDropdown('gradeDropdown')" data-dropdown="gradeDropdown">
+            <div class="test">
+                <div class="head">
+                    <div class="title">
+                        GRADE 
+                        <span class="material-symbols-outlined">arrow_drop_down</span>
+                    </div>
+                </div>
+                <div class="isi">
+                    <div class="isinya">
+                        <label>
+                            <input type="checkbox"> Grade A
+                        </label>
+                    </div>
+                    <div class="isinya">
+                        <label>
+                            <input type="checkbox"> Grade B
+                        </label>
+                    </div>
+                    <div class="isinya">
+                        <label>
+                            <input type="checkbox"> Grade C
+                        </label>
+                    </div>
+                    <div class="isinya">
+                        <label>
+                            <input type="checkbox"> Grade D
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="test">
+                <div class="head">
+                    <div class="title">
+                        PRODUCER 
+                        <span class="material-symbols-outlined">arrow_drop_down</span>
+                    </div>
+                </div>
+                <div class="isi">
+                    <div class="isinya">
+                        <label>
+                            <input type="checkbox"> Orang Tua
+                        </label>
+                    </div>
+                    <div class="isinya">
+                        <label>
+                            <input type="checkbox"> Indofood
+                        </label>
+                    </div>
+                    <div class="isinya">
+                        <label>
+                            <input type="checkbox"> Nestle
+                        </label>
+                    </div>
+                    <div class="isinya">
+                        <label>
+                            <input type="checkbox"> Wings
+                        </label>
+                    </div>
+                    <div class="isinya">
+                        <label>
+                            <input type="checkbox"> Unilever
+                        </label>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="test">
+                <div class="head">
+                    <div class="title">
+                        TYPE 
+                        <span class="material-symbols-outlined">arrow_drop_down</span>
+                    </div>
+                </div>
+                <div class="isi">
+                    <div class="isinya">
+                        <label>
+                            <input type="checkbox"> Makanan Kemasan
+                        </label>
+                    </div>
+                    <div class="isinya">
+                        <label>
+                            <input type="checkbox"> Minuman Kemasan
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- <button class="button" onclick="toggleDropdown('gradeDropdown')" data-dropdown="gradeDropdown">
                 Grade <span class="material-symbols-outlined">arrow_drop_down</span>
             </button>
             <div id="gradeDropdown" class="conten">
@@ -62,86 +166,122 @@
                     </label>
                 </div>
             </div>
+
+            <button class="button" onclick="toggleDropdown('typeDropdown')" data-dropdown="typeDropdown">
+                Tipe <span class="material-symbols-outlined">arrow_drop_down</span>
+            </button>
+            <div id="typeDropdown" class="conten">
+                <div class="selectAll">
+                    <label>
+                        <input type="checkbox" id="selectAllType" checked> Pilih Semua
+                    </label>
+                </div>
+                <div>
+                    <label>
+                        <input type="checkbox" class="typeCheckbox" value="foods"  checked> Makanan Kemasan
+                    </label>
+                </div>
+                <div>
+                    <label>
+                        <input type="checkbox" class="typeCheckbox" value="drinks" checked> Minuman Kemasan
+                    </label>
+                </div>
+            </div>
         
-        <button class="button" onclick="toggleDropdown('typeDropdown')" data-dropdown="typeDropdown">
-            Tipe <span class="material-symbols-outlined">arrow_drop_down</span>
-        </button>
-        <div id="typeDropdown" class="conten">
-            <div class="selectAll">
-                <label>
-                    <input type="checkbox" id="selectAllType" checked> Pilih Semua
-                </label>
-            </div>
-            <div>
-                <label>
-                    <input type="checkbox" class="typeCheckbox" value="foods"  checked> Makanan Kemasan
-                </label>
-            </div>
-            <div>
-                <label>
-                    <input type="checkbox" class="typeCheckbox" value="drinks" checked> Minuman Kemasan
-                </label>
-            </div>
-        </div>
-        
-        <button class="button" onclick="toggleDropdown('produsenDropdown')" data-dropdown="produsenDropdown">
-            Produsen <span class="material-symbols-outlined">arrow_drop_down</span>
-        </button>
-        <div id="produsenDropdown" class="conten">
-            <div class="selectAll">
-                <label>
-                    <input type="checkbox" id="selectAllProducer" checked> Pilih Semua
-                </label>
-            </div>
-            <div>
-                <label>
-                    <input type="checkbox" class="producerCheckbox" value="orangTua"  checked> Orang Tua
-                </label>
-            </div>
-            <div>
-                <label>
-                    <input type="checkbox" class="producerCheckbox" value="Indofood" checked> Indofood
-                </label>
-            </div>
-            <div>
-                <label>
-                    <input type="checkbox" class="producerCheckbox" value="Nestle"  checked> Nestle
-                </label>
-            </div>
-            <div>
-                <label>
-                    <input type="checkbox" class="producerCheckbox" value="Wings" checked> Wings
-                </label>
-            </div>
-            <div>
-                <label>
-                    <input type="checkbox" class="producerCheckbox" value="Unilever"  checked> Unilever
-                </label>
-            </div>
-        </div>    
-    </div>
+            <button class="button" onclick="toggleDropdown('produsenDropdown')" data-dropdown="produsenDropdown">
+                Produsen<span class="material-symbols-outlined">arrow_drop_down</span>
+            </button>
+            <div id="produsenDropdown" class="conten">
+                <div class="selectAll">
+                    <label>
+                        <input type="checkbox" id="selectAllProducer" checked> Pilih Semua
+                    </label>
+                </div>
+                <div>
+                    <label>
+                        <input type="checkbox" class="producerCheckbox" value="orangTua"  checked> Orang Tua
+                    </label>
+                </div>
+                <div>
+                    <label>
+                        <input type="checkbox" class="producerCheckbox" value="Indofood" checked> Indofood
+                    </label>
+                </div>
+                <div>
+                    <label>
+                        <input type="checkbox" class="producerCheckbox" value="Nestle"  checked> Nestle
+                    </label>
+                </div>
+                <div>
+                    <label>
+                        <input type="checkbox" class="producerCheckbox" value="Wings" checked> Wings
+                    </label>
+                </div>
+                <div>
+                    <label>
+                        <input type="checkbox" class="producerCheckbox" value="Unilever"  checked> Unilever
+                    </label>
+                </div>
+            </div>   --> 
+        </div>                                                           
     
         <div class="food">
-        <div id="nescafeGoldOriginal" style="display: inline-block; position: relative;">
-            <img src="Pictures/57fa0b56-ff01-4cf6-909b-9864da3c6922.png" height="300">
-            <div style="position: relative; bottom: 0; left: 70%; transform: translateX(-50%);color: white;">Nescafe Gold Original</div>
-        </div>
-
-        <div id="coconutWater" style="display: inline-block; position: relative;">
-            <img src="Pictures/no-brand_ufc-refresh-100-natural-coconut-water-1l_full01.webp" height="300">
-            <div style="position: relative; bottom: 0; left:70%; transform: translateX(-50%);color: white;">UFC Coconut Water</div>
-        </div>
-
-        <div id="indocafeC" style="display: inline-block; position: relative;">
-            <img src="Pictures/indocafe_indocafe-coffeemix-3-in-1-5-sx20gr-box-kopi-instan_full03.webp" height="300">
-            <div style="position: relative; bottom: 0; left: 70%; transform: translateX(-50%); color: white;">Indocafe Coffeemix</div>
-        </div>
-
-        <div id="youC" style="display: inline-block; position: relative;">
-            <img src="Pictures/you-c1000_you_c1000_vitamin_lemon_-140_ml-_pcs-_full01_kli3moay.webp" height="300">    
-            <div style="position: relative; bottom: 0; left: 70%; transform: translateX(-50%); color: white;">YOU-C1000 Bottle</div>
+            <div class="product">
+                <img src="Pictures/57fa0b56-ff01-4cf6-909b-9864da3c6922.png">
+                <div class="name">Nescafe Gold Original</div>
             </div>
-        </div>
+            <div class="product">
+                <img src="Pictures/57fa0b56-ff01-4cf6-909b-9864da3c6922.png">
+                <div class="name">UFC Coconut Water</div>
+            </div>
+            <div class="product">
+                <img src="Pictures/57fa0b56-ff01-4cf6-909b-9864da3c6922.png">
+                <div class="name">Indocafe Coffeemix</div>
+            </div>
+            <div class="product">
+                <img src="Pictures/57fa0b56-ff01-4cf6-909b-9864da3c6922.png">
+                <div class="name">YOU-C1000 Bottle</div>
+            </div>
+            <div class="product">
+                <img src="Pictures/57fa0b56-ff01-4cf6-909b-9864da3c6922.png">
+                <div class="name">Nescafe Gold Original</div>
+            </div>
+            <div class="product">
+                <img src="Pictures/57fa0b56-ff01-4cf6-909b-9864da3c6922.png">
+                <div class="name">Nescafe Gold Original</div>
+            </div>
+            <div class="product">
+                <img src="Pictures/57fa0b56-ff01-4cf6-909b-9864da3c6922.png">
+                <div class="name">Nescafe Gold Original</div>
+            </div>
+            <div class="product">
+                <img src="Pictures/57fa0b56-ff01-4cf6-909b-9864da3c6922.png">
+                <div class="name">Nescafe Gold Original</div>
+            </div>
+            <div class="product">
+                <img src="Pictures/57fa0b56-ff01-4cf6-909b-9864da3c6922.png">
+                <div class="name">Nescafe Gold Original</div>
+            </div>
+            <div class="product">
+                <img src="Pictures/57fa0b56-ff01-4cf6-909b-9864da3c6922.png">
+                <div class="name">Nescafe Gold Original</div>
+            </div>
+<!-- 
+            <div class="product" id="coconutWater" style="display: inline-block; position: relative;">
+                <img src="Pictures/no-brand_ufc-refresh-100-natural-coconut-water-1l_full01.webp" height="300">
+                <div style="position: relative; bottom: 0; left:70%; transform: translateX(-50%);color: white;">UFC Coconut Water</div>
+            </div>
+
+            <div class="product" id="indocafeC" style="display: inline-block; position: relative;">
+                <img src="Pictures/indocafe_indocafe-coffeemix-3-in-1-5-sx20gr-box-kopi-instan_full03.webp" height="300">
+                <div style="position: relative; bottom: 0; left: 70%; transform: translateX(-50%); color: white;">Indocafe Coffeemix</div>
+            </div>
+
+            <div class="product" id="youC" style="display: inline-block; position: relative;">
+                <img src="Pictures/you-c1000_you_c1000_vitamin_lemon_-140_ml-_pcs-_full01_kli3moay.webp" height="300">    
+                <div style="position: relative; bottom: 0; left: 70%; transform: translateX(-50%); color: white;">YOU-C1000 Bottle</div>
+                </div>
+            </div> -->
         </div>
     </div>
     <script src="Template.js"></script>
