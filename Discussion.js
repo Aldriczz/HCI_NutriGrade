@@ -3,6 +3,7 @@ function new_thread(){
     var threads = document.querySelector(".main");
     T.style.display = "block";
     threads.style.display = "block";
+    document.querySelector(".top-bar").classList.remove("active");
 }
 
 function load(x){
@@ -73,7 +74,7 @@ function post_thread(){
     '    </div>'+
     '    <script src="thread.js"></script>');
 
-    add.innerHTML = "<a href='thread.html' onclick='changeFetch(" + 
+    add.innerHTML = "<a href='thread.html' class='forum-title' onclick='changeFetch(" + 
     storageId + 
     ")'><li class='row'><h4 class='title'>" + 
     title + 
@@ -97,6 +98,7 @@ function cancel(){
     var threads = document.querySelector(".main");
     T.style.display = "none";
     threads.style.display = "none";
+    document.querySelector(".top-bar").classList.add("active");
 }
 
 function renderPost(){

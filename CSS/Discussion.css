@@ -4,6 +4,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: Poppins;
 }
 
 body{
@@ -111,105 +112,126 @@ body{
     display: block;
 }
 
-
-a {
-    text-decoration: none;
-    color: black;
+.content {
+    margin-left: 140px;
+    margin-top: 0px;
+    padding-top: 60px;
+    width: calc(100% - 140px); 
+    flex-direction: column;
+    display: flex;
+    color: white;
+    transition: margin-left 0.3s ease, width 0.3s ease;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    overflow-y: auto;
+    overflow-x: hidden;
+    height: calc(100vh - 1px);
 }
 
-h1, h4, ol{
-    margin: 0;
+.sidebar:hover ~ .content {
+    margin-left: 290px;
+    width: calc(100% - 290px);
 }
 
-p{
-    margin: 5px 0;
+.container{
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-right: 30px;
 }
 
-.top-bar {
+.container .top-bar {
     background-color: black;  
-    padding: 10px 40px;
+    width: 1000px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    padding: 25px 40px;
+    padding-bottom: 23px;
     display: flex;
+    align-items: center;
     justify-content: space-between;
-    border-top-left-radius: 30px;
-    border-top-right-radius: 30px;
-    position: fixed;  
-    top: 65px;
-    left: 450px;
-    width: 550px;
+}
+
+.top-bar.active{
+    border-radius: 15px;
+}
+
+.forum-name{
+    font-weight: 800;
     color: orange;
-}
-
-.row{
-    padding: 5px 0;
-}
-
-.bottom {
+    /* background-color: aqua;  */
+    height: 40px;
     display: flex;
-    color: grey;
-    font-size: 12px;
-}
-
-.timestamp {
-    padding-right: 10px;
-}
-
-.main{
-    background-color: white;
-    padding: 10px 15px;
-    overflow-y: scroll; 
-    max-height: 210px;
-    top: 360px; 
-    position: fixed;
-    left: 450px;
-    width: 550px;
-    display: none;
-}
-
-.new-thread {
-    background-color: orange;
-    color: black;
-    border-radius: 20px;
-    padding:5px;
-    margin-bottom: 8px;
-    margin-left: 10px;
-    
-}
-
-.forum-name {
-    flex-direction: inherit;
-    margin-top: 7px;
+    align-items: center;
+    justify-content: left;
+    margin: 0;
+    padding: 0;
+    letter-spacing: 1px;
 }
 
 .buttons {
-    margin-top: 8px;
+    /* background-color: aqua; */
+    margin-left: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.new-thread {
+    background-color: transparent;
+    color: white;
+    border-radius: 20px;
+    padding: 10px 20px;
+    box-shadow: none;
+    border: 3px solid orange;
+    font-weight: 500;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.new-thread:hover{
+    border: none;
+    background-color: orange;
+    border: 3px solid orange;
+    transition: 0.2s ease;
+    color: black;
 }
 
 .new-thread-setup {
-    background-color:white;
-    padding: 20px;  
-    position: fixed;
-    top: 130px;
-    width: 550px;
-    left: 450px;
+    background-color: orange;
+    width: 1000px;
     display: none;
-}
-
-.tt {
-    /* columns: 200px; */
-    width: 70%;
-    margin-left: 20px;
-}
-
-.info {
-    margin: 0px;
-    margin-top: 10px;
-    margin-left: 20px;
+    padding: 30px;
+    padding-left: 40px;
 }
 
 .thread-create {
     margin: 0px;
-    margin-left: 20px;
-    font-size: x-large;
+    font-weight: 600;
+    font-size: 20px;
+    letter-spacing: 1px;
+}
+
+.info {
+    margin-top: 20px;
+    font-weight: 600;
+    font-size: 15px;
+    letter-spacing: 1px;
+}
+
+.tt {
+    margin-top: 8px;
+    width: calc(100% - 40px);
+    padding: 15px;
+    /* border: 1px solid black; */
+    border: none;
+    border-radius: 3px;
+    font-style: italic;
+}
+
+.tt:focus{
+    font-style: normal;
 }
 
 textarea {
@@ -218,50 +240,72 @@ textarea {
     display: flex;
 }
 
-.post-button {
-    margin-left: 20px;
-    background-color: orange;
-    color: black;
-    border-radius: 20px;
-    padding:5px;
-    margin-bottom: 8px;
-    margin-top: 10px;
+.btn{
+    padding: 0;
+    margin-top: 30px;
 }
 
-.cancel-button {
-    margin-left: 20px;
-    background-color: orange;
-    color: black;
-    border-radius: 20px;
-    padding:5px;
-    margin-bottom: 8px;
-    margin-top: 10px;
+.post-button, .cancel-button {
+    background-color: black;
+    color: orange;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 16px;
+    font-weight: 500;
+    margin-right: 16px;
 }
-  #content {
-    width: 100%;
-    height: 100%;
-    border-radius: 0;
-  }
 
-  .container{
+.main{
+    background-color: white;
+    padding: 20px 30px;
+    overflow-y: scroll; 
+    max-height: 210px;
+    width: 1000px;
+    display: none;
+    margin-bottom: 100px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.main .forum-title{
+    text-decoration: none;
+    color: orange;
+    font-weight: 800;
+}
+
+.row{
+    margin: 20px 0px;
+    padding: 10px 15px;
+    border-radius: 5px;
+    border: 2px solid black;
+}
+
+.row::marker{
+    color: transparent;
+}
+
+.bottom {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 500px;
-    margin: 10px 60px;
-    
-  }
+    color: grey;
+    font-size: 12px;
+    font-weight: 100;
+    margin-top: 3px;
+}
 
-  .main::-webkit-scrollbar {
+.timestamp {
+    padding-right: 20px;
+}
+
+.main::-webkit-scrollbar {
     width: 8px;
-  }
+}
   
-  .main::-webkit-scrollbar-thumb {
+.main::-webkit-scrollbar-thumb {
     background-color: #ccc;
     border-radius: 4px;
     padding: 5px;
-  }
+}
   
-  .main::-webkit-scrollbar-track {
+.main::-webkit-scrollbar-track {
     background-color: #f0f0f0;
-  }
+}

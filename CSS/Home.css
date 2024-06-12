@@ -4,18 +4,20 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: Poppins;
 }
 
 body{
     height: 100vh;
     width: 100vw;
     display: flex;
-    /* background: linear-gradient(135deg, #71b7e6, #9b59b6); */
     background-image: url(Pictures/bg-foto.jpg);
     backdrop-filter: brightness(70%);
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
+    justify-content: center;
+    align-items: center;
 }
 
 .sidebar{

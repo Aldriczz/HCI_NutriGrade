@@ -51,7 +51,7 @@ var fallbackResponses = [
     "I'm sorry, I didn't understand that. Can you please rephrase?",
     "Could you provide more details or ask your question differently?",
     "I didn't catch that. Could you try asking in another way?",
-    "I'm here to help! Can you ask your question in a different manner?"
+    "I'm here to help! Can you ask your question in a different manner?",
 ];
 
 function getBotResponse(message) {
@@ -71,7 +71,8 @@ async function fetchOutput(userInput) {
     var chatMessages = document.getElementById("chat-messages");
     var botMessage = document.createElement("div");
     botMessage.className = "message bot-message";
-    botMessage.innerHTML = "<span class='user'>Chat Bot:</span> <span class='text'>" + botResponse + "</span>";
+    // botMessage.innerHTML = "<span class='user'>Chat Bot:</span> <span class='text'>" + botResponse + "</span>";
+    botMessage.innerHTML = "<span class='text'>" + botResponse + "</span>";
     chatMessages.appendChild(botMessage);
 
     chatMessages.scrollTop = chatMessages.scrollHeight;
