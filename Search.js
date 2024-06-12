@@ -86,83 +86,76 @@ document.querySelectorAll('.content').forEach(dropdown => {
     });
 });
 
-function filterProducts() {
-    const selectedGrade = document.querySelector('[data-dropdown="gradeDropdown"]').textContent.trim();
-    const selectedType = document.querySelector('[data-dropdown="typeDropdown"]').textContent.trim();
-    const selectedProdusen = document.querySelector('[data-dropdown="produsenDropdown"]').textContent.trim();
+//Filter
 
-    if (selectedGrade === 'Grade A' && selectedType === 'Minuman Kemasan' && selectedProdusen === 'Nestle') {
-        document.querySelector('#nescafeGoldOriginal').style.display = 'inline-block';
-    } else {
-        document.querySelector('#nescafeGoldOriginal').style.display = 'none';
-    }
-
-    if (selectedGrade === 'Grade B' && selectedType === 'Minuman Kemasan' && selectedProdusen === 'Orang Tua') {
-        document.querySelector('#coconutWater').style.display = 'inline-block';
-    } else {
-        document.querySelector('#coconutWater').style.display = 'none';
-    }
-
-    if (selectedGrade === 'Grade C' && selectedType === 'Minuman Kemasan' && selectedProdusen === 'Unilever') {
-        document.querySelector('#indocafeC').style.display = 'inline-block';
-    } else {
-        document.querySelector('#indocafeC').style.display = 'none';
-    }
-
-    if (selectedGrade === 'Grade D' && selectedType === 'Minuman Kemasan' && selectedProdusen === 'Wings') {
-        document.querySelector('#youC').style.display = 'inline-block';
-    } else {
-        document.querySelector('#youC').style.display = 'none';
-    }
-}
-
-//Buat kalau all checklist di grade, bisa diunchecklist semua checkbox
 document.addEventListener("DOMContentLoaded", () => {
-    const selectAllCheckbox = document.getElementById("selectAllGrade");
-    const gradeCheckboxes = document.querySelectorAll(".gradeCheckbox");
+    const checkGroups = [
+        { selectAllId: "selectAllGrade", checkboxClass: "gradeCheckbox", name: "gradeCheckbox" },
+        { selectAllId: "selectAllType", checkboxClass: "typeCheckbox", name: "typeCheckbox" },
+        { selectAllId: "selectAllProducer", checkboxClass: "producerCheckbox", name: "producerCheckbox" },
+    ];
 
-    // Fungsi untuk mengatur status semua checkbox berdasarkan checkbox "Semua Grade"
-    function toggleAllCheckboxes() {
-        const isChecked = selectAllCheckbox.checked;
-        gradeCheckboxes.forEach(checkbox => {
-            checkbox.checked = isChecked;
+    function updateSelectAllCheckbox(group) {
+        const checkboxes = document.querySelectorAll(`.${group.checkboxClass}`);
+        const selectAllCheckbox = document.getElementById(group.selectAllId);
+        const allChecked = Array.from(checkboxes).every(checkbox => checkbox.checked);
+        selectAllCheckbox.checked = allChecked;
+    }
+
+    function setVisibility() {
+        const checkedGrades = getChecked('gradeCheckbox');
+        const checkedTypes = getChecked('typeCheckbox');
+        const checkedProducers = getChecked('producerCheckbox');
+
+        allFoods.forEach(el => {
+            const gradeCheck = checkedGrades.length === 0 || checkedGrades.some(value => el.classList.contains(value));
+            const typeCheck = checkedTypes.length === 0 || checkedTypes.some(value => el.classList.contains(value));
+            const producerCheck = checkedProducers.length === 0 || checkedProducers.some(value => el.classList.contains(value));
+
+            // Hide all food elements if no filters are selected
+            if (checkedGrades.length === 0 && checkedTypes.length === 0 && checkedProducers.length === 0) {
+                el.style.display = 'none';
+            } else {
+                // Show the food element if it matches the selected filters
+                el.style.display = (gradeCheck && typeCheck && producerCheck) ? 'inline-block' : 'none';
+            }
         });
     }
 
-    // Panggil fungsi toggleAllCheckboxes saat checkbox "Semua Grade" berubah
-    selectAllCheckbox.addEventListener("change", toggleAllCheckboxes);
-});
-
-//Buat kalau all checklist di type, bisa diunchecklist semua checkbox
-document.addEventListener("DOMContentLoaded", () => {
-    const selectAllCheckbox = document.getElementById("selectAllType");
-    const typeCheckboxes = document.querySelectorAll(".typeCheckbox");
-
-    // Fungsi untuk mengatur status semua checkbox berdasarkan checkbox "Semua Grade"
-    function toggleAllCheckboxes() {
-        const isChecked = selectAllCheckbox.checked;
-        typeCheckboxes.forEach(checkbox => {
-            checkbox.checked = isChecked;
-        });
+    function getChecked(name) {
+        return Array.from(document.querySelectorAll(`input[name=${name}]:checked`)).map(el => el.value);
     }
 
-    // Panggil fungsi toggleAllCheckboxes saat checkbox "Semua Grade" berubah
-    selectAllCheckbox.addEventListener("change", toggleAllCheckboxes);
-});
+    checkGroups.forEach(group => {
+        const selectAllCheckbox = document.getElementById(group.selectAllId);
+        const checkboxes = document.querySelectorAll(`.${group.checkboxClass}`);
 
-//Buat kalau all checklist di producer, bisa diunchecklist semua checkbox
-document.addEventListener("DOMContentLoaded", () => {
-    const selectAllCheckbox = document.getElementById("selectAllProducer");
-    const producerCheckboxes = document.querySelectorAll(".producerCheckbox");
-
-    // Fungsi untuk mengatur status semua checkbox berdasarkan checkbox "Semua Grade"
-    function toggleAllCheckboxes() {
-        const isChecked = selectAllCheckbox.checked;
-        producerCheckboxes.forEach(checkbox => {
-            checkbox.checked = isChecked;
+        checkboxes.forEach(checkbox => {
+            checkbox.addEventListener("change", () => {
+                updateSelectAllCheckbox(group);
+                setVisibility();
+            });
         });
-    }
 
-    // Panggil fungsi toggleAllCheckboxes saat checkbox "Semua Grade" berubah
-    selectAllCheckbox.addEventListener("change", toggleAllCheckboxes);
+        selectAllCheckbox.addEventListener("change", () => {
+            checkboxes.forEach(checkbox => {
+                checkbox.checked = selectAllCheckbox.checked;
+            });
+            setVisibility();
+        });
+
+        updateSelectAllCheckbox(group);
+    });
+
+    const allFoods = Array.from(document.querySelectorAll('.food'));
+
+    // Initialize visibility on page load
+    setVisibility();
+
+    // Add event listener to all checkboxes
+    const allCheckboxes = document.querySelectorAll('input[type=checkbox]');
+    allCheckboxes.forEach(checkbox => {
+        checkbox.addEventListener('change', setVisibility);
+    });
 });
+

@@ -1,10 +1,8 @@
 function new_thread(){
     var T = document.getElementById("create-thread");
     var threads = document.querySelector(".main");
-    if(T.style.display === "none"){
-        T.style.display = "block";
-        threads.style.display = "block";
-    }
+    T.style.display = "block";
+    threads.style.display = "block";
 }
 
 function load(x){
@@ -96,7 +94,9 @@ function post_thread(){
 
 function cancel(){
     var T = document.getElementById("create-thread");
+    var threads = document.querySelector(".main");
     T.style.display = "none";
+    threads.style.display = "none";
 }
 
 function renderPost(){
