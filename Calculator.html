@@ -53,6 +53,7 @@
             <p class="note">This refers to any aspartame, sugar alcohol, carbohydrate alcohol, polyhydric alcohol, or any other substance added in place of sugar to provide a sweet taste</p>
             <label><input type="radio" id="nss" value="yes" name="radio"> Yes</label>
             <label><input type="radio" id="nss" value="no" name="radio"> No</label>
+            <p class="errors" id="error-choose"></p>
             <div class="button-container" id="first">
                 <!-- <button id="back-button" onclick="prevStep()">BACK</button> -->
                 <button id="next-button" onclick="nextStep()">NEXT</button>
@@ -64,7 +65,8 @@
             <p class="instruction">Total sugar content stated on Nutrition Information Panel (NIP) (grams per 100 ml<sup>3</sup>)</p>
             <p class="note">This refers to any monosaccharide and disaccharide in the beverage. This includes novel sugars like allulose and isomaltulose.</p>
             <!-- <input type="number" class="num-box" id="sugar-level" placeholder="g/100ml" required> -->
-            <input type="input" class="num-box" id="sugar-level" placeholder="g/100ml" required>
+            <input type="number" class="num-box" id="sugar-level" placeholder="g/100ml" >
+            <p class="errors" id="error-sugar"></p>
             <div class="button-container" id="other">
                 <button id="back-button" onclick="prevStep()">BACK</button>
                 <button id="next-button" onclick="nextStep()">NEXT</button>
@@ -76,7 +78,8 @@
             <div class="head">Input saturated fat level</div>
             <p class="instruction">Total saturated fat content stated on Nutrition Information Panel (NIP) (grams per 100 ml<sup>3</sup>)</p>
             <!-- <input type="number" class="num-box" id="fat-level" placeholder="g/100ml" required> -->
-            <input type="input" class="num-box" id="fat-level" placeholder="g/100ml" required>
+            <input type="number" class="num-box" id="fat-level" placeholder="g/100ml" required>
+            <p class="errors" id="error-fat"></p>
             <div class="button-container" id="other">
                 <button id="back-button" onclick="prevStep()">BACK</button>
                 <button id="next-button" onclick="nextStep()">NEXT</button>

@@ -156,7 +156,7 @@ body{
     visibility: hidden;
 }
 
-.main .test:hover .isi{
+.main .test .isi.active{
     display: block;
     visibility: visible;
 }

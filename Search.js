@@ -1,12 +1,13 @@
 document.addEventListener("DOMContentLoaded", () => {
     const searchInput = document.getElementById("searchInput");
+    const tests = document.querySelectorAll(".test")
 
     searchInput.addEventListener("input", () => {
         const searchTerm = searchInput.value.trim().toLowerCase();
-        const products = document.querySelectorAll("[id$='Original'], [id$='Water'], [id$='C'], [id$='Bottle']");
+        const products = document.querySelectorAll(".product");
 
         products.forEach(product => {
-            const productName = product.querySelector("div").textContent.trim().toLowerCase();
+            const productName = product.querySelector('div[class="name"]').textContent.trim().toLowerCase();
             if (productName.includes(searchTerm)) {
                 product.style.display = 'inline-block';
             } else {
@@ -14,6 +15,16 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
     });
+    tests.forEach(test=>{
+        test.addEventListener("click",()=>{
+            var content = test.querySelector(".isi")
+            if(content.classList.contains('active')){
+                content.classList.remove('active')
+            }else{
+                content.classList.add('active')
+            }
+        });
+    })
 });
 
 function toggleDropdown(dropdownId) {

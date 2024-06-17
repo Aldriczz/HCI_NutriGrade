@@ -271,4 +271,7 @@ body{
     color: orange;
 }
 
- 
+ .errors{
+    font-size: 14px;
+    color: red;
+ }
