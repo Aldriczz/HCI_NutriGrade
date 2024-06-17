@@ -301,8 +301,8 @@ body{
     align-items: center;
 }
 
-.show {
-    display: block;
+.hidden {
+    display: none;
 }
 
 .material-symbols-outlined {
