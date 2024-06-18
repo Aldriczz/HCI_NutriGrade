@@ -7,7 +7,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     products.forEach(product=>{
         product.addEventListener('click',function(){
-            console.log("bijik")
+            const description = product.querySelectorAll('p')
+            description.forEach(desc=>{
+                desc.classList.remove('hidden')
+            })
             document.body.classList.add('blur-background')
             product.classList.add('expanded')
         })
@@ -17,6 +20,10 @@ document.addEventListener("DOMContentLoaded", () => {
         const isExpanded = this.querySelector('.product.expanded')
         const isProduct = event.target.closest('.product');
         if(isExpanded && !isProduct){
+            const description = isExpanded.querySelectorAll('p')
+            description.forEach(desc=>{
+                desc.classList.add('hidden')
+            })
             isExpanded.classList.remove('expanded')
             document.body.classList.remove('blur-background')
         }
@@ -25,27 +32,22 @@ document.addEventListener("DOMContentLoaded", () => {
 
     searchInput.addEventListener("input", () => {
         const searchTerm = searchInput.value.trim().toLowerCase();
-
+        if(searchTerm.length===0){
+            fillter()
+        }else{
         products.forEach(product => {
-            const productName = product.querySelector('div[class="name"]').textContent.trim().toLowerCase();
-            var fillter = false
-            if (productName.includes(searchTerm)) {
-                checkBoxes.forEach(checkBox=>{
-                    var type = checkBox.id
-                    if(product.classList.contains(type)){
-                        fillter = true
+            if(!product.classList.contains('hidden')){
+                const productName = product.querySelector('div[class="name"]').textContent.trim().toLowerCase();
+                var fillter = false
+                if (productName.includes(searchTerm)) {
+                        product.classList.remove('hidden')
+                    }else{
+                        product.classList.add('hidden');
                     }
-                })
-                if(fillter === true){
-                    product.classList.remove('hidden')
-                }else{
-                    product.classList.add('hidden');
-                }
-                
-            } else {
-                product.classList.add('hidden');
             }
+            
         });
+        }
     });
     tests.forEach(test=>{
         test.addEventListener("click",()=>{
