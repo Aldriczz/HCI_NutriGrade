@@ -5,6 +5,24 @@ document.addEventListener("DOMContentLoaded", () => {
     const tests = document.querySelectorAll(".title")
     const checkBoxes = document.querySelectorAll('input[type="checkbox"]:checked')
 
+    products.forEach(product=>{
+        product.addEventListener('click',function(){
+            console.log("bijik")
+            document.body.classList.add('blur-background')
+            product.classList.add('expanded')
+        })
+    })
+
+    document.addEventListener('click',function(event){
+        const isExpanded = this.querySelector('.product.expanded')
+        const isProduct = event.target.closest('.product');
+        if(isExpanded && !isProduct){
+            isExpanded.classList.remove('expanded')
+            document.body.classList.remove('blur-background')
+        }
+        
+    })
+
     searchInput.addEventListener("input", () => {
         const searchTerm = searchInput.value.trim().toLowerCase();
 
