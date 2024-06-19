@@ -7,7 +7,7 @@
     font-family: Poppins;
 }
 
-body{
+body {
     height: 100vh;
     width: 100vw;
     display: flex;
@@ -20,7 +20,7 @@ body{
     align-items: center;
 }
 
-.sidebar{
+.sidebar {
     font-family: "Poppins", sans-serif;
     position: fixed;
     top: 0;
@@ -37,22 +37,22 @@ body{
     transition: width 0.3s ease;
 }
 
-.sidebar:hover{
+.sidebar:hover {
     width: 270px;
 }
 
-.sidebar .logo{
+.sidebar .logo {
     display: flex;
     align-items: center;
     padding: 25px 10px 15px;
 }
 
-.logo h1{
+.logo h1 {
     font-size: 40px;
     color: black;
 }
 
-.logo h2{
+.logo h2 {
     color: black;
     font-weight: 800;
     font-size: 1.3rem;
@@ -60,23 +60,23 @@ body{
     display: none;
 }
 
-.sidebar:hover .logo h2{
+.sidebar:hover .logo h2 {
     display: block;
 }
 
-.sidebar .links{
+.sidebar .links {
     list-style: none;
     margin-top: 20px;
 }
 
-.sidebar .links h4{
+.sidebar .links h4 {
     color: rgb(0, 0, 0);
     font-weight: 500;
     margin-bottom: 10px;
     display: none;
 }
 
-.sidebar:hover .links h4{
+.sidebar:hover .links h4 {
     display: block;
 }
 
@@ -91,16 +91,16 @@ body{
     background: rgba(255, 166, 0, 0.6);
 }
 
-.sidebar:hover .links hr{
+.sidebar:hover .links hr {
     border-color: transparent;
 }
 
-.links li span{
+.links li span {
     padding: 12px 10px;
     color: black;
 }
 
-.links li a{
+.links li a {
     color: black;
     text-decoration: none;
     font-weight: 500;
@@ -113,135 +113,177 @@ body{
 }
 
 .content {
-  margin-left: 140px;
-  width: calc(100% - 140px); 
-  flex-direction: column;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  transition: margin-left 0.3s ease, width 0.3s ease;
-  overflow-y: auto;
-  overflow-x: hidden;
-  height: 100%;
+    margin-left: 140px;
+    width: calc(100% - 140px); 
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    transition: margin-left 0.3s ease, width 0.3s ease;
+    overflow-y: auto;
+    overflow-x: hidden;
+    height: 100%;
 }
 
 .sidebar:hover ~ .content {
-  margin-left: 290px;
-  width: calc(100% - 290px);
+    margin-left: 290px;
+    width: calc(100% - 290px);
 }
 
 .content .chat-container {
-  margin-top: 55px;
-  width: 100%;
-  max-width: 800px;
-  border-radius: 10px;
-  height: 800px;
-  overflow: hidden;
-  align-items: center;
-  display: flex;
-  flex-direction: column;
+    margin-top: 55px;
+    width: 100%;
+    max-width: 800px;
+    border-radius: 10px;
+    height: 800px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
 }
 
 .chat-header {
-  background-color: black;
-  color:orange;
-  padding: 10px 15px;
-  font-size: 18px;
-  text-align: center;
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  width: 800px;
+    background-color: black;
+    color: orange;
+    padding: 10px 15px;
+    font-size: 18px;
+    text-align: center;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    width: 100%;
 }
 
 .chat-messages {
-  padding: 30px;
-  overflow-y: scroll;
-  max-height: 500px; /* Adjust as needed */
-  background-color: gray;
-  width: 800px;
+    padding: 30px;
+    overflow-y: scroll;
+    max-height: 800px; 
+    background-color: gray;
+    width: 100%;
+    flex-grow: 1;
 }
 
 .message {
-  margin-bottom: 30px;
-  color: black;
+    margin-bottom: 30px;
+    color: black;
 }
 
 .message .user {
-  font-weight: bold;
-  margin-right: 10px;
+    font-weight: bold;
+    margin-right: 10px;
 }
 
 .message .text {
-  background-color: #f0f0f0;
-  padding: 8px 12px;
-  border-radius: 10px;
-  display: inline-block;
+    background-color: #f0f0f0;
+    padding: 8px 12px;
+    border-radius: 10px;
+    display: inline-block;
 }
 
 .user-message {
-  text-align: right;
-  line-height: 1.5;
+    text-align: right;
+    line-height: 1.5;
 }
 
 .bot-message {
-  text-align: left;
-  line-height: 1.5;
+    text-align: left;
+    line-height: 1.5;
 }
 
 .chat-input {
-  padding: 0px;
-  border: none;
-  display: flex;
-  flex-direction: row;
-  width: 800px;
-  height: 60px;
-  background-color: white;
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
-  align-items: center;
-  justify-content: space-between;
-  overflow: hidden;
+    display: flex;
+    width: 100%;
+    background-color: white;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    align-items: center;
+    padding: 0;
 }
 
 .input-box {
-  position:absolute;
-  width: 700px;
-  padding: 15px;
-  outline: none;
-  background: none;
-  border: none;
+    flex-grow: 1;
+    padding: 15px;
+    outline: none;
+    border: none;
+    background: none;
 }
 
 .send-btn {
-  margin-left: 712px;
-  padding: 13px 25px;
-  background-color: orange;
-  color: black;
-  border: none;
-  cursor: pointer;
-  font-weight: 500;
-  height: 60px;
-  font-size: 15px;
-  transition: 0.1s ease;
+    padding: 13px 25px;
+    background-color: orange;
+    color: black;
+    border: none;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 15px;
+    transition: 0.1s ease;
 }
 
-.send-btn:hover{
-  background-color: rgb(233, 151, 0);
-  transition: 0.1s ease;
+.send-btn:hover {
+    background-color: rgb(233, 151, 0);
+    transition: 0.1s ease;
 }
 
 /* Customize scrollbar if needed */
 .chat-messages::-webkit-scrollbar {
-  width: 8px;
+    width: 8px;
 }
 
 .chat-messages::-webkit-scrollbar-thumb {
-  background-color: #ccc;
-  border-radius: 4px;
+    background-color: #ccc;
+    border-radius: 4px;
 }
 
 .chat-messages::-webkit-scrollbar-track {
-  background-color: #f0f0f0;
+    background-color: #f0f0f0;
+}
+
+.faq {
+    font-family: Cambria; 
+    margin-left: 50px;
+    margin-top: 20px;
+    height: 300px;
+}
+
+.titleFAQ {
+    opacity: 0.75;
+    border-top-left-radius: 10%;
+    border-top-right-radius: 10%;
+    margin-left: 55px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    font-size: 45px;
+}
+
+.questions {
+    padding: 15px; 
+    margin-bottom: 12px;
+    width: 800px;
+    cursor: pointer; 
+    outline: none; 
+    background-color: rgba(0, 0, 0); 
+    color: orange; 
+    border: 1px solid white; 
+    border-radius: 10px; 
+    transition: background-color 0.3s; 
+    display: block;
+    font-weight: 800;
+}
+
+.questions:hover { 
+    box-shadow: 0px 0px 50px 1px rgb(255, 255, 255);
+}
+
+.answers {
+    background-color: black;
+    width: 800px;
+    font-size: 14px;
+    line-height: 20px;
+    padding: 15px; 
+    padding-top: 20px;
+    margin-bottom: 30px;
+    margin-top: -28px;
+    border-radius: 0px 0px 10px 10px;
+    border: 1px solid white;
+    border-top: none;
 }
