@@ -9,7 +9,6 @@ function exit(){
     }
 }
 
-
 function new_thread(){
     var T = document.getElementById("create-thread");
     var threads = document.querySelector(".main");
@@ -46,6 +45,7 @@ function post_thread(){
     }else{
         removeError('content')
     }
+
     if(flag === false){
         return;
     }
@@ -156,9 +156,7 @@ function clearAll(){
 
 function displayError(errorId,message){
     const error = document.getElementById(errorId)
-    if(error.classList.contains('.hidden')){
-        error.classList.remove('hidden')
-    }
+    error.classList.remove('hidden')
     error.textContent = message
 }
 
