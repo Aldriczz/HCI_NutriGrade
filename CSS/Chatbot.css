@@ -126,7 +126,7 @@ body {
 .content {
     margin-left: 140px;
     width: calc(100% - 140px); 
-    flex-direction: column;
+    flex-direction: row;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -143,14 +143,14 @@ body {
 }
 
 .content .chat-container {
-    margin-top: 55px;
     width: 100%;
     max-width: 800px;
     border-radius: 10px;
-    height: 800px;
+    height: 600px;
     overflow: hidden;
     display: flex;
     flex-direction: column;
+    margin-left: 30px;
 }
 
 .chat-header {
@@ -250,31 +250,32 @@ body {
 }
 
 .faq {
-    font-family: Cambria; 
-    margin-left: 50px;
-    margin-top: 20px;
-    height: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* height: 540px; */
+    height: 600px;
+    justify-content: space-between;
+    /* background-color: aqua; */
 }
 
 .titleFAQ {
     opacity: 0.75;
     border-top-left-radius: 10%;
     border-top-right-radius: 10%;
-    margin-left: 55px;
-    margin-top: 40px;
-    margin-bottom: 40px;
-    font-size: 45px;
+    margin-bottom: 20px;
+    font-size: 24px;
+    display: flex;
 }
 
 .questions {
     padding: 15px; 
-    margin-bottom: 12px;
-    width: 800px;
+    width: 300px;
     cursor: pointer; 
     outline: none; 
     background-color: rgba(0, 0, 0); 
     color: orange; 
-    border: 1px solid white; 
+    border: 5px solid transparent; 
     border-radius: 10px; 
     transition: background-color 0.3s; 
     display: block;
@@ -282,7 +283,9 @@ body {
 }
 
 .questions:hover { 
-    box-shadow: 0px 0px 50px 1px rgb(255, 255, 255);
+    /* box-shadow: 0px 0px 50px 1px rgb(255, 255, 255); */
+    border: 5px solid white;
+    transition: 0.2s ease;
 }
 
 .answers {
