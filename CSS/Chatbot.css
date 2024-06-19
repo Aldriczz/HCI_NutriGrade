@@ -223,7 +223,7 @@ body {
     padding: 13px 25px;
     background-color: orange;
     color: black;
-    border: none;
+    border: 1px solid orange;
     cursor: pointer;
     font-weight: 500;
     font-size: 15px;
