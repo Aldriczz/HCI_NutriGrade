@@ -248,6 +248,7 @@ textarea {
 .btn{
     padding: 0;
     margin-top: 30px;
+    margin-left: 750px;
 }
 
 .post-button, .cancel-button {

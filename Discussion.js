@@ -22,7 +22,7 @@ function post_thread(){
     if(content.trim()==="")return;
 
     content = content.replaceAll("\n", "<br />");
-
+    
     var list = document.getElementById("thread-list");
     var add = document.createElement("div");
     var time = new Date();
@@ -91,6 +91,7 @@ function post_thread(){
 
     document.getElementById("tt").value = "";
     document.getElementById("tc").value = "";
+    alert('Successfully added forum')
 }
 
 function cancel(){
