@@ -1,14 +1,3 @@
-document.addEventListener('click', function(event) {
-    const notif = document.querySelector('body');
-    const notifs = document.querySelector('.notification');
-    const x = document.querySelector('.x')
-    if (notif.classList.contains('blur') && event.target === notif) {
-        notif.classList.remove('blur');
-        notifs.classList.add('hidden');
-        x.classList.add('hidden')
-    }
-}, true);
-
 function exit(){
     const notif = document.querySelector('body');
     const notifs = document.querySelector('.notification');
