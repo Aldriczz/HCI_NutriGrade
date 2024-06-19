@@ -13,8 +13,8 @@ function showGradeInfo(grade) {
             class: 'grades',
             title: 'Nutri-Grade A',
             description: 'Drinks graded “A” contain minimal sugar, no sweetener, and minimal saturated fat content. Make these drinks your first choice whenever possible.',
-            sugar: '≤ 1g*',
-            fat: '≤ 0.7g*',
+            sugar: '≤ 1g',
+            fat: '≤ 0.7g',
             examples: ['example-drink-1.jpg', 'example-drink-2.jpg']
         },
         B: {
@@ -49,15 +49,15 @@ function showGradeInfo(grade) {
         <div class="grade">
             <div class="grade-circle ${info.class}">${grade}</div>
             <h3>${info.title}</h3>
-            <p>${info.description}</p>
+            <p class="desc">${info.description}</p>
             <div class="grade-details">
                 <div class="detail">
                     <span>${info.sugar}</span>
-                    <p>Sugar and sweetener</p>
+                    <p>Sugar and Sweetener</p>
                 </div>
                 <div class="detail">
                     <span>${info.fat}</span>
-                    <p>Saturated fat</p>
+                    <p>Saturated Fat</p>
                 </div>
             </div>
         </div>

@@ -16,11 +16,11 @@
         <ul class="links">
             <li class="current">
                 <span class="material-symbols-outlined">home</span>
-                <a href="index.html">Home</a>
+                <a href="#">Home</a>
             </li>
             <li>
                 <span class="material-symbols-outlined">calculate</span>
-                <a href="Calculator.html">Calculator</a>
+                <a href="Calculator.html">Grade-Calc</a>
             </li>
             <li>
                 <span class="material-symbols-outlined">search</span>
@@ -37,26 +37,29 @@
         </ul>
     </aside>
     <div class="content">
-        <h1>
-            [ ]NUTRI-GRADE 
-        </h1>
-    
-        <h2>
-            YOUR GO-TO SUGAR TRACKER
-        </h2>
-        <p class="description">
-            NutriGrade is a comprehensive system designed to help you make healthier beverage choices. 
-            NutriGrade provides clear information about the sugar and saturated fat content in drinks and foods. This website offers tools like the Nutri-Grade Calculator, and a community forum for discussing nutrition topics. 
-            NutriGrade is your go-to resource for accurate and easy-to-understand nutritional information.
-        </p>
-        
-        <div class="nutri-grade-selector">
-            <button class="grade-btn" onclick="showGradeInfo('A')">A</button>
-            <button class="grade-btn" onclick="showGradeInfo('B')">B</button>
-            <button class="grade-btn" onclick="showGradeInfo('C')">C</button>
-            <button class="grade-btn" onclick="showGradeInfo('D')">D</button>
+        <div class="info">
+            <div class="web">
+                <h1><i>[]</i></h1>
+                <h1>NUTRI GRADE</h1>
+            </div>
+            <h2>
+                YOUR GO-TO SUGAR TRACKER
+            </h2>
+            <p class="description">
+                NutriGrade is a comprehensive system designed to help you make healthier choices, which provides clear information
+                about the sugar and saturated fat content in drinks and foods. This website offers tools like calculator for calculating a product's grade
+                and an online forum to dicuss about nutrition topics.
+            </p>
         </div>
-        <div id="nutri-grade-info" class="nutri-grade-info"></div>
+        <div class="grade-explanation">
+            <div id="nutri-grade-info" class="nutri-grade-info"></div>
+            <div class="nutri-grade-selector">
+                <button class="grade-btn" onclick="showGradeInfo('A')">A</button>
+                <button class="grade-btn" onclick="showGradeInfo('B')">B</button>
+                <button class="grade-btn" onclick="showGradeInfo('C')">C</button>
+                <button class="grade-btn" onclick="showGradeInfo('D')">D</button>
+            </div>
+        </div>
     </div>
 
     <script src="Home.js"></script>
