@@ -8,7 +8,6 @@
 }
 
 body{
-    height: 100vh;
     width: 100vw;
     display: flex;
     background-image: url(Pictures/bg-foto.jpg);
@@ -19,6 +18,20 @@ body{
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+body.blur::before{
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(5px);
+    z-index: 5;
 }
 
 .top-bar {
@@ -136,4 +149,30 @@ p{
 .printed-comment {
     color: black;
     background-color: green;
+}
+
+.hidden{
+    display: none;
+}
+
+.notification{
+    width: 20%;
+    /* height: 20%; */
+    position: absolute;
+    top: 40%;
+    background-color: black;
+    color: orange;
+    text-align: center;
+    z-index: 6;
+    padding: 30px;
+}
+
+.x{
+    z-index: 6;
+    top: 40%;
+    right: 36.5%;
+    position: absolute;
+    background-color: orange;
+    border: none;
+    padding: 5px 10px 5px 10px;
 }

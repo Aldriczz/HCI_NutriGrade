@@ -47,14 +47,19 @@
             <div class="new-thread-setup" id="create-thread">
                 <h1 class="thread-create">Upload a New Discussion Forum</h1>
                 <h3 class="info">Title: </h3>
-                <input type="text" class="tt" placeholder="(300 max words)" required maxlength="300" id="tt">
+                <input type="text" class="tt" placeholder="(50 max words)" required maxlength="50" id="tt">
+                <p class="error" id="title"></p>
                 <h3 class="info">Content: </h3>
                 <input type="text" class="tt" id="tc" placeholder="How are your experiences with NutriGrade?">
+                <p class="error" id="content"></p>
                 <div class="btn">
                     <button class="post-button" onclick="post_thread()">Post</button>
                     <button class="cancel-button" onclick="cancel()">Cancel</button>
                 </div>
             </div>
+
+            <div class="notification hidden">Discussion Forum Successfully Added!!</div>
+            <button class="x hidden" onclick="exit()">x</button>
             <div class="main">
                 <ol id="thread-list">
                     

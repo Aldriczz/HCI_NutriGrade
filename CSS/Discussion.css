@@ -20,6 +20,19 @@ body{
     align-items: center;
 }
 
+body.blur::before{
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(5px);
+    z-index: 5;
+}
+
+
 .sidebar{
     font-family: "Poppins", sans-serif;
     position: fixed;
@@ -148,7 +161,7 @@ body{
 
 .container .top-bar {
     background-color: black;  
-    width: 1000px;
+    width: 80%;
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
     padding: 25px 40px;
@@ -205,7 +218,7 @@ body{
 
 .new-thread-setup {
     background-color: orange;
-    width: 1000px;
+    width: 80%;
     display: none;
     padding: 30px;
     padding-left: 40px;
@@ -233,6 +246,7 @@ body{
     border: none;
     border-radius: 3px;
     font-style: italic;
+    height: 100px;
 }
 
 .tt:focus{
@@ -248,7 +262,7 @@ textarea {
 .btn{
     padding: 0;
     margin-top: 30px;
-    margin-left: 750px;
+    margin-left: 75%;
 }
 
 .post-button, .cancel-button {
@@ -264,9 +278,9 @@ textarea {
 .main{
     background-color: white;
     padding: 20px 30px;
-    overflow-y: scroll; 
-    max-height: 210px;
-    width: 1000px;
+    overflow-y: auto; 
+    max-height: 400px;
+    width: 80%;
     display: none;
     margin-bottom: 100px;
     border-bottom-left-radius: 10px;
@@ -277,6 +291,12 @@ textarea {
     text-decoration: none;
     color: orange;
     font-weight: 800;
+}
+
+.main p {
+    white-space: pre-wrap; 
+    word-wrap: break-word; 
+    margin: 10px 0;
 }
 
 .row{
@@ -314,4 +334,37 @@ textarea {
   
 .main::-webkit-scrollbar-track {
     background-color: #f0f0f0;
+}
+
+.error{
+    font-size: 14px;
+    color: red;
+    text-decoration: solid;
+    margin-top: 4px;
+}
+
+.hidden{
+    display: none;
+}
+
+.notification{
+    width: 20%;
+    /* height: 20%; */
+    position: absolute;
+    top: 40%;
+    background-color: black;
+    color: orange;
+    text-align: center;
+    z-index: 6;
+    padding: 30px;
+}
+
+.x{
+    z-index: 6;
+    top: 40%;
+    right: 36.5%;
+    position: absolute;
+    background-color: orange;
+    border: none;
+    padding: 5px 10px 5px 10px;
 }

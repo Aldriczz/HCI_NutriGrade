@@ -1,3 +1,26 @@
+document.addEventListener('click', function(event) {
+    const notif = document.querySelector('body');
+    const notifs = document.querySelector('.notification');
+    const x = document.querySelector('.x')
+    if (notif.classList.contains('blur') && event.target === notif) {
+        notif.classList.remove('blur');
+        notifs.classList.add('hidden');
+        x.classList.add('hidden')
+    }
+}, true);
+
+function exit(){
+    const notif = document.querySelector('body');
+    const notifs = document.querySelector('.notification');
+    const x = document.querySelector('.x')
+    if (notif.classList.contains('blur')){
+        notif.classList.remove('blur')
+        notifs.classList.add('hidden');
+        x.classList.add('hidden')
+    }
+}
+
+
 function new_thread(){
     var T = document.getElementById("create-thread");
     var threads = document.querySelector(".main");
@@ -17,11 +40,28 @@ function changeFetch(x){
 
 function post_thread(){
     var title = document.getElementById("tt").value;
-    if(title.trim()==="" || title.length>=30)return;
+    var flag = true
+    if(title.trim()==="" ){
+        displayError('title','*Title cannot be empty');
+        flag = false
+    }else if(title.length>50){
+        displayError('title','*Title cannot exceeds 50 words'); 
+        flag = false
+    }else{
+        removeError('title')
+    }
     var content = document.getElementById("tc").value;
-    if(content.trim()==="")return;
+    if(content.trim()===""){
+        displayError('content','*Content cannot be empty')
+        flag = false
+    }else{
+        removeError('content')
+    }
+    if(flag === false){
+        return;
+    }
 
-    content = content.replaceAll("\n", "<br />");
+    content = content.replaceAll("\n", "<br>");
     
     var list = document.getElementById("thread-list");
     var add = document.createElement("div");
@@ -91,7 +131,12 @@ function post_thread(){
 
     document.getElementById("tt").value = "";
     document.getElementById("tc").value = "";
-    alert('Successfully added forum')
+    const notif = document.querySelector('body')
+    notif.classList.add('blur')
+    const notifs = document.querySelector('.notification')
+    notifs.classList.remove('hidden')
+    const x = document.querySelector('.x')
+    x.classList.remove('hidden')
 }
 
 function cancel(){
@@ -100,6 +145,8 @@ function cancel(){
     T.style.display = "none";
     threads.style.display = "none";
     document.querySelector(".top-bar").classList.add("active");
+    removeError('title')
+    removeError('content')
 }
 
 function renderPost(){
@@ -117,3 +164,17 @@ function renderPost(){
 function clearAll(){
     localStorage.removeItem("thread-list");
 }
+
+function displayError(errorId,message){
+    const error = document.getElementById(errorId)
+    if(error.classList.contains('.hidden')){
+        error.classList.remove('hidden')
+    }
+    error.textContent = message
+}
+
+function removeError(errorId){
+    const error = document.getElementById(errorId)
+    error.classList.add('hidden')
+}
+

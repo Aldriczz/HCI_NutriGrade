@@ -26,7 +26,8 @@ function sendMessage(x){
     document.getElementById("comment-input").value="";
 
     window.location.reload();
-    alert('Successfully added reply')
+    
+    
 }
 
 function cleanAll(){
