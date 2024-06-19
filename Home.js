@@ -10,7 +10,7 @@ function showGradeInfo(grade) {
     
     const gradeInfo = {
         A: {
-            class: 'grade-a',
+            class: 'grades',
             title: 'Nutri-Grade A',
             description: 'Drinks graded “A” contain minimal sugar, no sweetener, and minimal saturated fat content. Make these drinks your first choice whenever possible.',
             sugar: '≤ 1g*',
@@ -18,7 +18,7 @@ function showGradeInfo(grade) {
             examples: ['example-drink-1.jpg', 'example-drink-2.jpg']
         },
         B: {
-            class: 'grade-b',
+            class: 'grades',
             title: 'Nutri-Grade B',
             description: 'Drinks graded “B” contain moderate amounts of sugar and/or sweeteners. Choose these drinks occasionally.',
             sugar: '1g - 5g',
@@ -26,7 +26,7 @@ function showGradeInfo(grade) {
             examples: ['example-drink-3.jpg', 'example-drink-4.jpg']
         },
         C: {
-            class: 'grade-c',
+            class: 'grades',
             title: 'Nutri-Grade C',
             description: 'Drinks graded “C” contain higher amounts of sugar and/or sweeteners. Limit your consumption of these drinks.',
             sugar: '5g - 10g',
@@ -34,7 +34,7 @@ function showGradeInfo(grade) {
             examples: ['example-drink-5.jpg', 'example-drink-6.jpg']
         },
         D: {
-            class: 'grade-d',
+            class: 'grades',
             title: 'Nutri-Grade D',
             description: 'Drinks graded “D” contain the highest amounts of sugar and/or sweeteners. Avoid these drinks whenever possible.',
             sugar: '> 10g',

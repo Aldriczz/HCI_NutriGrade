@@ -85,6 +85,12 @@ body{
     align-items: center;
 }
 
+.links li.current{
+    display: flex;
+    align-items: center;
+    background-color: rgb(255, 145, 0);
+}
+
 .links li:hover {
     border-radius: 4px;
     cursor: pointer;
@@ -302,20 +308,9 @@ summary:hover {
     margin-bottom: 10px;
 }
 
-.grade-a {
-    background-color: green;
-}
-
-.grade-b {
-    background-color: lightgreen;
-}
-
-.grade-c {
-    background-color: orange;
-}
-
-.grade-d {
-    background-color: red;
+.grades {
+    background-color: rgb(255, 123, 0);
+    color: black;
 }
 
 .grade h3 {

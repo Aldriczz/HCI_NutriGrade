@@ -84,6 +84,11 @@ body{
     display: flex;
     align-items: center;
 }
+.links li.current{
+    display: flex;
+    align-items: center;
+    background-color: rgb(255, 145, 0);
+}
 
 .links li:hover {
     border-radius: 4px;
