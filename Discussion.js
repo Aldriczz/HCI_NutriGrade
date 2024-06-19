@@ -1,14 +1,3 @@
-document.addEventListener('click', function(event) {
-    const notif = document.querySelector('body');
-    const notifs = document.querySelector('.notification');
-    const x = document.querySelector('.x')
-    if (notif.classList.contains('blur') && event.target === notif) {
-        notif.classList.remove('blur');
-        notifs.classList.add('hidden');
-        x.classList.add('hidden')
-    }
-}, true);
-
 function exit(){
     const notif = document.querySelector('body');
     const notifs = document.querySelector('.notification');
@@ -19,7 +8,6 @@ function exit(){
         x.classList.add('hidden')
     }
 }
-
 
 function new_thread(){
     var T = document.getElementById("create-thread");
@@ -57,6 +45,7 @@ function post_thread(){
     }else{
         removeError('content')
     }
+
     if(flag === false){
         return;
     }
@@ -167,9 +156,7 @@ function clearAll(){
 
 function displayError(errorId,message){
     const error = document.getElementById(errorId)
-    if(error.classList.contains('.hidden')){
-        error.classList.remove('hidden')
-    }
+    error.classList.remove('hidden')
     error.textContent = message
 }
 
