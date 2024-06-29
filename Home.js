@@ -12,7 +12,7 @@ function showGradeInfo(grade) {
         A: {
             class: 'grades',
             title: 'Nutri-Grade A',
-            description: 'Drinks graded “A” contain minimal sugar, no sweetener, and minimal saturated fat content. Make these drinks your first choice whenever possible.',
+            description: 'Products graded “A” contain minimal sugar, no sweetener, and minimal saturated fat content. Make these products your first choice whenever possible.',
             sugar: '≤ 1g',
             fat: '≤ 0.7g',
             examples: ['example-drink-1.jpg', 'example-drink-2.jpg']
@@ -20,7 +20,7 @@ function showGradeInfo(grade) {
         B: {
             class: 'grades',
             title: 'Nutri-Grade B',
-            description: 'Drinks graded “B” contain moderate amounts of sugar and/or sweeteners. Choose these drinks occasionally.',
+            description: 'Products graded “B” contain moderate amounts of sugar and/or sweeteners. Choose these products occasionally.',
             sugar: '1g - 5g',
             fat: '0.7g - 1.5g',
             examples: ['example-drink-3.jpg', 'example-drink-4.jpg']
@@ -28,7 +28,7 @@ function showGradeInfo(grade) {
         C: {
             class: 'grades',
             title: 'Nutri-Grade C',
-            description: 'Drinks graded “C” contain higher amounts of sugar and/or sweeteners. Limit your consumption of these drinks.',
+            description: 'Products graded “C” contain higher amounts of sugar and/or sweeteners. Limit your consumption of these products.',
             sugar: '5g - 10g',
             fat: '1.5g - 3g',
             examples: ['example-drink-5.jpg', 'example-drink-6.jpg']
@@ -36,7 +36,7 @@ function showGradeInfo(grade) {
         D: {
             class: 'grades',
             title: 'Nutri-Grade D',
-            description: 'Drinks graded “D” contain the highest amounts of sugar and/or sweeteners. Avoid these drinks whenever possible.',
+            description: 'Products graded “D” contain the highest amounts of sugar and/or sweeteners. Avoid these products whenever possible.',
             sugar: '> 10g',
             fat: '> 3g',
             examples: ['example-drink-7.jpg', 'example-drink-8.jpg']
